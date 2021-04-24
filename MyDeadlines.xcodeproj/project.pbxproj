@@ -8,9 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		489C89228B99A310E4502757 /* Pods_MyDeadlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE3045A85C48C8C4E727C5 /* Pods_MyDeadlines.framework */; };
+		62324EBE263490480064D0B9 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EBD263490480064D0B9 /* AppFlow.swift */; };
+		62324EC22634940C0064D0B9 /* FlowAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EC12634940C0064D0B9 /* FlowAssembly.swift */; };
+		62324EC7263494210064D0B9 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EC6263494210064D0B9 /* ServiceAssembly.swift */; };
+		62324ECA263495190064D0B9 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EC9263495190064D0B9 /* MainAssembly.swift */; };
+		62324EE42634991D0064D0B9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EE32634991C0064D0B9 /* R.generated.swift */; };
+		62324EE82634996B0064D0B9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EE72634996B0064D0B9 /* MainPresenter.swift */; };
+		62324EF026349C880064D0B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EEF26349C880064D0B9 /* SceneDelegate.swift */; };
 		624FC0FD26348BF3001377AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FC0FC26348BF3001377AB /* AppDelegate.swift */; };
-		624FC0FF26348BF3001377AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FC0FE26348BF3001377AB /* SceneDelegate.swift */; };
-		624FC10126348BF3001377AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FC10026348BF3001377AB /* ViewController.swift */; };
+		624FC10126348BF3001377AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FC10026348BF3001377AB /* MainViewController.swift */; };
 		624FC10426348BF3001377AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624FC10226348BF3001377AB /* Main.storyboard */; };
 		624FC10726348BF3001377AB /* MyDeadlines.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 624FC10526348BF3001377AB /* MyDeadlines.xcdatamodeld */; };
 		624FC10926348BF5001377AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624FC10826348BF5001377AB /* Assets.xcassets */; };
@@ -18,10 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62324EBD263490480064D0B9 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		62324EC12634940C0064D0B9 /* FlowAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAssembly.swift; sourceTree = "<group>"; };
+		62324EC6263494210064D0B9 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
+		62324EC9263495190064D0B9 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		62324EE32634991C0064D0B9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		62324EE72634996B0064D0B9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		62324EEF26349C880064D0B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "../../../../.Trash/MyDeadlines 20-08-14-990/MyDeadlines/SceneDelegate.swift"; sourceTree = "<group>"; };
 		624FC0F926348BF3001377AB /* MyDeadlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDeadlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624FC0FC26348BF3001377AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		624FC0FE26348BF3001377AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		624FC10026348BF3001377AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		624FC10026348BF3001377AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		624FC10326348BF3001377AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		624FC10626348BF3001377AB /* MyDeadlines.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyDeadlines.xcdatamodel; sourceTree = "<group>"; };
 		624FC10826348BF5001377AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62324EC4263494140064D0B9 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				62324EC12634940C0064D0B9 /* FlowAssembly.swift */,
+				62324EC6263494210064D0B9 /* ServiceAssembly.swift */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		62324EE22634991C0064D0B9 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				62324EE32634991C0064D0B9 /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		624FC0F026348BF3001377AB = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +106,8 @@
 				624FC12226348DCC001377AB /* AppDelegate */,
 				624FC12326348DD5001377AB /* Flow */,
 				624FC12626348DE3001377AB /* Logic */,
+				62324EC4263494140064D0B9 /* Assemblies */,
+				62324EE22634991C0064D0B9 /* Generated */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -110,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				624FC0FC26348BF3001377AB /* AppDelegate.swift */,
-				624FC0FE26348BF3001377AB /* SceneDelegate.swift */,
+				62324EEF26349C880064D0B9 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -118,7 +149,8 @@
 		624FC12326348DD5001377AB /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				624FC12826348E0B001377AB /* LaunchFlow */,
+				62324EBD263490480064D0B9 /* AppFlow.swift */,
+				624FC12826348E0B001377AB /* Launch */,
 				624FC12C26348E24001377AB /* Main */,
 			);
 			path = Flow;
@@ -140,19 +172,21 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		624FC12826348E0B001377AB /* LaunchFlow */ = {
+		624FC12826348E0B001377AB /* Launch */ = {
 			isa = PBXGroup;
 			children = (
 				624FC12E26348EF0001377AB /* LaunchScreen.storyboard */,
 			);
-			path = LaunchFlow;
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		624FC12C26348E24001377AB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				624FC10026348BF3001377AB /* MainViewController.swift */,
+				62324EE72634996B0064D0B9 /* MainPresenter.swift */,
+				62324EC9263495190064D0B9 /* MainAssembly.swift */,
 				624FC10226348BF3001377AB /* Main.storyboard */,
-				624FC10026348BF3001377AB /* ViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -182,6 +216,7 @@
 			buildConfigurationList = 624FC11026348BF5001377AB /* Build configuration list for PBXNativeTarget "MyDeadlines" */;
 			buildPhases = (
 				2791643F7A6F4B2F7AE4B4FF /* [CP] Check Pods Manifest.lock */,
+				62324ED42634961A0064D0B9 /* Run Script */,
 				624FC0F526348BF3001377AB /* Sources */,
 				624FC0F626348BF3001377AB /* Frameworks */,
 				624FC0F726348BF3001377AB /* Resources */,
@@ -264,6 +299,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		62324ED42634961A0064D0B9 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/MyDeadlines/Source/Generated/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/MyDeadlines/Source/Generated/R.generated.swift\"\n\n";
+		};
 		7E3FEA7D253823C443026CDB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,9 +343,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				624FC10126348BF3001377AB /* ViewController.swift in Sources */,
+				624FC10126348BF3001377AB /* MainViewController.swift in Sources */,
+				62324EC22634940C0064D0B9 /* FlowAssembly.swift in Sources */,
+				62324EE42634991D0064D0B9 /* R.generated.swift in Sources */,
 				624FC0FD26348BF3001377AB /* AppDelegate.swift in Sources */,
-				624FC0FF26348BF3001377AB /* SceneDelegate.swift in Sources */,
+				62324EC7263494210064D0B9 /* ServiceAssembly.swift in Sources */,
+				62324EF026349C880064D0B9 /* SceneDelegate.swift in Sources */,
+				62324EE82634996B0064D0B9 /* MainPresenter.swift in Sources */,
+				62324EBE263490480064D0B9 /* AppFlow.swift in Sources */,
+				62324ECA263495190064D0B9 /* MainAssembly.swift in Sources */,
 				624FC10726348BF3001377AB /* MyDeadlines.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

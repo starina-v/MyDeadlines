@@ -5,8 +5,15 @@ use_frameworks!
 platform :ios, '13.0'
 
 def app_set
-    pod 'Swinject'
-    pod 'SwinjectAutoregistration'
+  
+  # Architecture
+  pod 'Swinject'
+  pod 'SwinjectAutoregistration'
+  
+  # Utilities
+  pod 'R.swift', '~> 5.2.0'
+  pod 'SwifterSwift', '~> 5.2.0'
+  
 end
 
 target 'MyDeadlines' do
