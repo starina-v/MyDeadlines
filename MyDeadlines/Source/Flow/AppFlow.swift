@@ -1,10 +1,3 @@
-//
-//  AppFlow.swift
-//  MyDeadlines
-//
-//  Created by Vlad Starina on 24.04.2021.
-//
-
 import UIKit
 import Swinject
 import SwinjectAutoregistration

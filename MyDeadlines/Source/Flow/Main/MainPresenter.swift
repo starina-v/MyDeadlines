@@ -1,22 +1,40 @@
-//
-//  MainPresenter.swift
-//  MyDeadlines
-//
-//  Created by Vlad Starina on 24.04.2021.
-//
 
 import Foundation
+import RxSwift
 
 protocol MainPresenter {
     
+    var posts: [Post] { get }
 }
 
 final class MainPresenterImp {
     
-    private weak var view: MainView?
+    var posts: [Post] = []
     
-    init(view: MainView) {
+    private let apiClient: ApiClient
+    private let disposeBag = DisposeBag()
+
+    private weak var view: MainView?
+
+    init(view: MainView, apiClient: ApiClient) {
         self.view = view
+        self.apiClient = apiClient
+        
+        getPosts()
+    }
+    
+    func getPosts() {
+        apiClient
+            .request(PostsApi.get)
+            .subscribe(
+                onSuccess: { (response: PostsResponse) in
+                    self.posts = response.posts
+                    self.view?.update()
+                },
+                onError: {
+                    print($0)
+                })
+                .disposed(by: disposeBag)
     }
 }
 

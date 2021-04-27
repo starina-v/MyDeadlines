@@ -10,6 +10,9 @@ def app_set
   pod 'Swinject'
   pod 'SwinjectAutoregistration'
   
+  # Network
+  pod 'Moya/RxSwift', '~> 14.0'
+
   # Utilities
   pod 'R.swift', '~> 5.2.0'
   pod 'SwifterSwift', '~> 5.2.0'

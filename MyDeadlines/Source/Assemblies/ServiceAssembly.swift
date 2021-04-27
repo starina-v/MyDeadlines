@@ -1,10 +1,4 @@
-//
-//  ServiceAssembly.swift
-//  MyDeadlines
-//
-//  Created by Vlad Starina on 24.04.2021.
-//
-
+import Moya
 import Swinject
 import SwinjectAutoregistration
 
@@ -24,11 +18,21 @@ extension ServiceAssembly: Assembly {
 private extension ServiceAssembly {
 
     func assembleNetworking(container: Container) {
+        container.autoregister(ApiClient.self, initializer: ApiClientImp.init)
+
+        container.register(ApiProvider.self) { resolver in
+            let plugins: [PluginType] = []
+            return MoyaProvider<MultiTarget>(
+                endpointClosure: { target in
+                    MoyaProvider
+                        .defaultEndpointMapping(for: target)
+                        .adding(newHTTPHeaderFields: ["Accept": "application/json"])
+                },
+                plugins: plugins)
+        }.inObjectScope(.container)
     }
 
     func assembleStorages(container: Container) {
-//        container.autoregister(CoreDataService.self, initializer: CoreDataServiceImp.init)
-//            .inObjectScope(.container)
     }
 
     func assembleOther(container: Container) {

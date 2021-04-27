@@ -18,14 +18,14 @@ extension MainAssembly: Assembly {
         container.register(MainViewController.self) { resolver in
             let view = R.storyboard.main.instantiateInitialViewController()!
 
-            let presenter = resolver.resolve(MainPresenter.self, argument: view)
+            let presenter = resolver.resolve(MainPresenter.self, argument: view)!
             view.inject(presenter: presenter)
             
-            return MainViewController()
+            return view
         }
 
         container.register(MainPresenter.self) { (resolver, view: MainViewController) in
-            MainPresenterImp(view: view)
+            MainPresenterImp(view: view, apiClient: resolver~>)
         }
     }
 }
