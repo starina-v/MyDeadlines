@@ -29,6 +29,9 @@ final class MainPresenterImp {
             .subscribe(
                 onSuccess: { (response: PostsResponse) in
                     self.posts = response.posts
+                        .filter({ !$0.link.contains("/ru/")})
+                        .filter({ !$0.link.contains("/en/")})
+
                     print(self.posts)
                     self.view?.update()
                 },
