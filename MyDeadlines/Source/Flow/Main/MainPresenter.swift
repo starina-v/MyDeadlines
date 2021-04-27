@@ -29,6 +29,7 @@ final class MainPresenterImp {
             .subscribe(
                 onSuccess: { (response: PostsResponse) in
                     self.posts = response.posts
+                    print(self.posts)
                     self.view?.update()
                 },
                 onError: {
