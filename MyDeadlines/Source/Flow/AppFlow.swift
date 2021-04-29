@@ -16,7 +16,9 @@ protocol Flow {
 final class AppFlow {
 
     private let resolver: Resolver
-    private let rootViewController = UINavigationController()
+    private let rootViewController = UITabBarController()
+    private let tasksRoorViewController = UINavigationController()
+    private let newsRootViewController = UINavigationController()
 
     init(resolver: Resolver) {
         self.resolver = resolver
@@ -45,8 +47,6 @@ extension AppFlow: Flow {
 private extension AppFlow {
 
     func navigationToMain() {
-        let viewController = resolver ~> MainViewController.self
-        rootViewController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -61,7 +61,25 @@ private extension AppFlow {
 private extension AppFlow {
 
     func setupRootViewController() {
-        let viewController = resolver ~> MainViewController.self
-        rootViewController.setViewControllers([viewController], animated: false)
+        let tasksViewController = UIViewController()
+        let newsViewController = resolver ~> MainViewController.self
+
+        tasksRoorViewController.setViewControllers([tasksViewController], animated: false)
+        newsRootViewController.setViewControllers([newsViewController], animated: false)
+        
+        let tasksTabBarItem = UITabBarItem(
+            title: "Tasks",
+            image: .add,
+            selectedImage: nil)
+
+        let newsTabBarItem = UITabBarItem(
+            title: "News",
+            image: .strokedCheckmark,
+            selectedImage: nil)
+        
+        tasksViewController.tabBarItem = tasksTabBarItem
+        newsViewController.tabBarItem = newsTabBarItem
+
+        rootViewController.setViewControllers([tasksRoorViewController, newsRootViewController], animated: false)
     }
 }

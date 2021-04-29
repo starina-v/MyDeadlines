@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
 extension MainViewController: MainView {
     
     func update() {
-        tableView.reloadData()
+        tableView?.reloadData()
     }
 }
 
@@ -75,5 +75,7 @@ private extension MainViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.register(nibWithCellClass: PostTableViewCell.self)
+        
+        title = "News"
     }
 }

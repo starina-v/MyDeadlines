@@ -27,13 +27,11 @@ final class MainPresenterImp {
         apiClient
             .request(PostsApi.get)
             .subscribe(
-                onSuccess: { (response: PostsResponse) in
-                    self.posts = response.posts
+                onSuccess: { [weak self] (response: PostsResponse) in
+                    self?.posts = response.posts
                         .filter({ !$0.link.contains("/ru/")})
                         .filter({ !$0.link.contains("/en/")})
-
-                    print(self.posts)
-                    self.view?.update()
+                    self?.view?.update()
                 },
                 onError: {
                     print($0)
