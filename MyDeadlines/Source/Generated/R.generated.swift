@@ -89,12 +89,23 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
+    /// Storyboard `AddTask`.
+    static let addTask = _R.storyboard.addTask()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `SetDeadlines`.
+    static let setDeadlines = _R.storyboard.setDeadlines()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AddTask", bundle: ...)`
+    static func addTask(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addTask)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -107,6 +118,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SetDeadlines", bundle: ...)`
+    static func setDeadlines(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.setDeadlines)
     }
     #endif
 
@@ -125,6 +143,21 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func accentColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.accentColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `background`.
+    static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "background", bundle: ..., traitCollection: ...)`
+    static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.background, compatibleWith: traitCollection)
     }
     #endif
 
@@ -162,10 +195,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `PostTableViewCell`.
     static let postTableViewCell = _R.nib._PostTableViewCell()
+    /// Nib `SetDeadlinesCell`.
+    static let setDeadlinesCell = _R.nib._SetDeadlinesCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "PostTableViewCell", in: bundle)`
@@ -175,8 +210,20 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SetDeadlinesCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.setDeadlinesCell) instead")
+    static func setDeadlinesCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.setDeadlinesCell)
+    }
+    #endif
+
     static func postTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PostTableViewCell? {
       return R.nib.postTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PostTableViewCell
+    }
+
+    static func setDeadlinesCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SetDeadlinesCell? {
+      return R.nib.setDeadlinesCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SetDeadlinesCell
     }
 
     fileprivate init() {}
@@ -215,6 +262,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _SetDeadlinesCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SetDeadlinesCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SetDeadlinesCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SetDeadlinesCell
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -223,12 +281,41 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try addTask.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try main.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try setDeadlines.validate()
+      #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct addTask: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = AddTaskViewController
+
+      let addTaskViewController = StoryboardViewControllerResource<AddTaskViewController>(identifier: "AddTaskViewController")
+      let bundle = R.hostingBundle
+      let name = "AddTask"
+
+      func addTaskViewController(_: Void = ()) -> AddTaskViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addTaskViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in storyboard 'AddTask', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.addTask().addTaskViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTaskViewController' could not be loaded from storyboard 'AddTask' as 'AddTaskViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -256,6 +343,28 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct setDeadlines: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SetDeadlinesViewController
+
+      let bundle = R.hostingBundle
+      let name = "SetDeadlines"
+      let setDeadlinesViewController = StoryboardViewControllerResource<SetDeadlinesViewController>(identifier: "SetDeadlinesViewController")
+
+      func setDeadlinesViewController(_: Void = ()) -> SetDeadlinesViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: setDeadlinesViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.setDeadlines().setDeadlinesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'setDeadlinesViewController' could not be loaded from storyboard 'SetDeadlines' as 'SetDeadlinesViewController'.") }
       }
 
       fileprivate init() {}

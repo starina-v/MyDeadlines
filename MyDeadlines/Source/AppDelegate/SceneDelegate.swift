@@ -24,7 +24,9 @@ private extension SceneDelegate {
         
         let modulesAssembler = Assembler(
             [
-                MainAssembly()
+                MainAssembly(),
+                AddTaskAssembly(),
+                SetDeadlinesAssembly()
             ],
             parent: serviceAssembler)
         

@@ -61,7 +61,7 @@ private extension AppFlow {
 private extension AppFlow {
 
     func setupRootViewController() {
-        let tasksViewController = UIViewController()
+        let tasksViewController = resolver ~> AddTaskViewController.self //UIViewController()
         let newsViewController = resolver ~> MainViewController.self
 
         tasksRoorViewController.setViewControllers([tasksViewController], animated: false)
