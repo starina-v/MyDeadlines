@@ -18,14 +18,16 @@ extension TasksAssembly: Assembly {
         container.register(TasksViewController.self) { resolver in
             let view = R.storyboard.tasks.instantiateInitialViewController()!
 
-            let presenter = resolver.resolve(TasksPresenter.self, argument: view)!
+            let presenter = resolver.resolve(TasksPresenterImp.self, argument: view)!
             view.inject(presenter: presenter)
 
             return view
         }
 
-        container.register(TasksPresenter.self) { (resolver, view: TasksViewController) in
+        container.register(TasksPresenterImp.self) { (resolver, view: TasksViewController) in
             TasksPresenterImp(view: view)
+        }.initCompleted { resolver, presenter in
+            presenter.inject(flow: resolver ~> AppFlow.self)
         }
     }
 }

@@ -4,9 +4,10 @@ import SwinjectAutoregistration
 
 enum Route {
     case main
+    case addNewTask
 }
 
-protocol Flow {
+protocol Flow: AnyObject {
     
     var root: UIViewController { get }
     
@@ -39,6 +40,8 @@ extension AppFlow: Flow {
         switch step {
         case .main:
             navigationToMain()
+        case .addNewTask:
+            navigationToAddNewTask()
         }
     }
 }
@@ -47,6 +50,11 @@ extension AppFlow: Flow {
 private extension AppFlow {
 
     func navigationToMain() {
+    }
+    
+    func navigationToAddNewTask() {
+        let addNewTaskViewController = resolver ~> AddNewTaskViewController.self
+        tasksRootViewController.pushViewController(addNewTaskViewController)
     }
 }
 

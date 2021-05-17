@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-protocol TasksView: class {
+protocol TasksView: AnyObject {
 }
 
 class TasksViewController: UIViewController, TasksView {
@@ -36,8 +36,6 @@ class TasksViewController: UIViewController, TasksView {
     }
     
     @objc func createNewTask(_ sender: UIBarButtonItem) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "AddNewTask", bundle: nil)
-        let addTask = storyBoard.instantiateViewController(withIdentifier: "AddNewTaskViewController") as! AddNewTaskViewController
-        navigationController?.pushViewController(addTask, animated: true);
+        presenter.addNewTask()
     }
 }
