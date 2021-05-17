@@ -23,8 +23,7 @@ final class AppFlow {
 
     init(resolver: Resolver) {
         self.resolver = resolver
-
-        setupRootViewController()
+        
         setupGlobalAppearance()
     }
 }
@@ -33,7 +32,8 @@ final class AppFlow {
 extension AppFlow: Flow {
 
     var root: UIViewController {
-        rootViewController
+        setupRootViewController()
+        return rootViewController
     }
 
     func navigate(to step: Route) {

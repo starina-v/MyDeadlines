@@ -17,11 +17,8 @@ final class TasksPresenterImp {
     private weak var view: TasksView?
     private weak var flow: Flow?
     
-    init(view: TasksView) {
+    init(view: TasksView, flow: Flow) {
         self.view = view
-    }
-    
-    func inject(flow: Flow) {
         self.flow = flow
     }
 }
