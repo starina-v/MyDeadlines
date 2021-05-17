@@ -24,6 +24,10 @@ final class AppFlow {
     init(resolver: Resolver) {
         self.resolver = resolver
         
+        DispatchQueue.main.async { [weak self] in
+            self?.setupRootViewController()
+        }
+
         setupGlobalAppearance()
     }
 }
@@ -32,8 +36,7 @@ final class AppFlow {
 extension AppFlow: Flow {
 
     var root: UIViewController {
-        setupRootViewController()
-        return rootViewController
+        rootViewController
     }
 
     func navigate(to step: Route) {
