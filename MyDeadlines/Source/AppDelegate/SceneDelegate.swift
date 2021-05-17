@@ -38,6 +38,7 @@ private extension SceneDelegate {
     
     func configureFlow() {
         let appFlow = assembler.resolver ~> AppFlow.self
+        appFlow.setup()
         
         self.window?.rootViewController = appFlow.root
         self.window?.makeKeyAndVisible()

@@ -23,11 +23,10 @@ final class AppFlow {
 
     init(resolver: Resolver) {
         self.resolver = resolver
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.setupRootViewController()
-        }
-
+    }
+    
+    func setup() {
+        setupRootViewController()
         setupGlobalAppearance()
     }
 }
