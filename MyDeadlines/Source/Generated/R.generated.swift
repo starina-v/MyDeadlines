@@ -89,21 +89,23 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
-    /// Storyboard `AddTask`.
-    static let addTask = _R.storyboard.addTask()
+    /// Storyboard `AddNewTask`.
+    static let addNewTask = _R.storyboard.addNewTask()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
     /// Storyboard `SetDeadlines`.
     static let setDeadlines = _R.storyboard.setDeadlines()
+    /// Storyboard `Tasks`.
+    static let tasks = _R.storyboard.tasks()
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "AddTask", bundle: ...)`
-    static func addTask(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.addTask)
+    /// `UIStoryboard(name: "AddNewTask", bundle: ...)`
+    static func addNewTask(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addNewTask)
     }
     #endif
 
@@ -125,6 +127,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SetDeadlines", bundle: ...)`
     static func setDeadlines(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.setDeadlines)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Tasks", bundle: ...)`
+    static func tasks(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.tasks)
     }
     #endif
 
@@ -270,6 +279,10 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SetDeadlinesCell
       }
 
+      func secondView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[1] as? UIKit.UIView
+      }
+
       fileprivate init() {}
     }
 
@@ -281,7 +294,7 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
-      try addTask.validate()
+      try addNewTask.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
@@ -292,25 +305,27 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try setDeadlines.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try tasks.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
-    struct addTask: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = AddTaskViewController
+    struct addNewTask: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = AddNewTaskViewController
 
-      let addTaskViewController = StoryboardViewControllerResource<AddTaskViewController>(identifier: "AddTaskViewController")
+      let addNewTaskViewController = StoryboardViewControllerResource<AddNewTaskViewController>(identifier: "AddNewTaskViewController")
       let bundle = R.hostingBundle
-      let name = "AddTask"
+      let name = "AddNewTask"
 
-      func addTaskViewController(_: Void = ()) -> AddTaskViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addTaskViewController)
+      func addNewTaskViewController(_: Void = ()) -> AddNewTaskViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addNewTaskViewController)
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in storyboard 'AddTask', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.addTask().addTaskViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTaskViewController' could not be loaded from storyboard 'AddTask' as 'AddTaskViewController'.") }
+        if _R.storyboard.addNewTask().addNewTaskViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addNewTaskViewController' could not be loaded from storyboard 'AddNewTask' as 'AddNewTaskViewController'.") }
       }
 
       fileprivate init() {}
@@ -365,6 +380,22 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.setDeadlines().setDeadlinesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'setDeadlinesViewController' could not be loaded from storyboard 'SetDeadlines' as 'SetDeadlinesViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct tasks: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = TasksViewController
+
+      let bundle = R.hostingBundle
+      let name = "Tasks"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

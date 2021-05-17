@@ -45,5 +45,14 @@
             </connections>
             <point key="canvasLocation" x="889.85507246376824" y="28.794642857142854"/>
         </tableViewCell>
+        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="JAA-pP-lxh">
+            <rect key="frame" x="0.0" y="0.0" width="131" height="31"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <segments>
+                <segment title="First"/>
+                <segment title="Second"/>
+            </segments>
+            <point key="canvasLocation" x="182" y="148"/>
+        </segmentedControl>
     </objects>
 </document>

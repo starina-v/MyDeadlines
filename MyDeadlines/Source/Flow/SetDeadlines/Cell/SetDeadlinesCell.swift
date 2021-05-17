@@ -21,9 +21,9 @@ class SetDeadlinesCell: UITableViewCell {
 // MARK: - Update
 
 extension SetDeadlinesCell {
-    func update(with lesson: LessonModel) {
-        lessonNumber.text = lesson.number
-    }
+//    func update(with lesson: LessonModel) {
+//        lessonNumber.text = lesson.number
+//    }
 }
 
 

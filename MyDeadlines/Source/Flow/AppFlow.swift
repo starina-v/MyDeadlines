@@ -17,7 +17,7 @@ final class AppFlow {
 
     private let resolver: Resolver
     private let rootViewController = UITabBarController()
-    private let tasksRoorViewController = UINavigationController()
+    private let tasksRootViewController = UINavigationController()
     private let newsRootViewController = UINavigationController()
 
     init(resolver: Resolver) {
@@ -61,10 +61,10 @@ private extension AppFlow {
 private extension AppFlow {
 
     func setupRootViewController() {
-        let tasksViewController = resolver ~> AddTaskViewController.self //UIViewController()
+        let tasksViewController = resolver ~> TasksViewController.self
         let newsViewController = resolver ~> MainViewController.self
 
-        tasksRoorViewController.setViewControllers([tasksViewController], animated: false)
+        tasksRootViewController.setViewControllers([tasksViewController], animated: false)
         newsRootViewController.setViewControllers([newsViewController], animated: false)
         
         let tasksTabBarItem = UITabBarItem(
@@ -80,6 +80,6 @@ private extension AppFlow {
         tasksViewController.tabBarItem = tasksTabBarItem
         newsViewController.tabBarItem = newsTabBarItem
 
-        rootViewController.setViewControllers([tasksRoorViewController, newsRootViewController], animated: false)
+        rootViewController.setViewControllers([tasksRootViewController, newsRootViewController], animated: false)
     }
 }
