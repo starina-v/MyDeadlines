@@ -16,26 +16,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lab1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nk-0z-iel">
-                        <rect key="frame" x="0.0" y="0.0" width="57" height="44"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="QbI-uA-YVK">
-                        <rect key="frame" x="304" y="0.0" width="110" height="44"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="110" id="kHp-79-16C"/>
-                        </constraints>
-                    </datePicker>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="h3o-pt-8dU">
+                        <rect key="frame" x="10" y="5" width="394" height="34"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lab1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nk-0z-iel">
+                                <rect key="frame" x="0.0" y="0.0" width="35.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="QbI-uA-YVK">
+                                <rect key="frame" x="135.5" y="0.0" width="258.5" height="34"/>
+                            </datePicker>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="2Nk-0z-iel" firstAttribute="top" secondItem="Gd2-7L-wTx" secondAttribute="top" id="Add-Sq-3m5"/>
-                    <constraint firstItem="QbI-uA-YVK" firstAttribute="top" secondItem="Gd2-7L-wTx" secondAttribute="top" id="Ge8-gx-JCF"/>
-                    <constraint firstAttribute="bottom" secondItem="2Nk-0z-iel" secondAttribute="bottom" id="JLk-7Y-xnA"/>
-                    <constraint firstItem="2Nk-0z-iel" firstAttribute="leading" secondItem="Gd2-7L-wTx" secondAttribute="leading" id="OWt-OL-Wvp"/>
-                    <constraint firstAttribute="bottom" secondItem="QbI-uA-YVK" secondAttribute="bottom" id="bXa-tW-PYP"/>
-                    <constraint firstAttribute="trailing" secondItem="QbI-uA-YVK" secondAttribute="trailing" id="pWA-vQ-7VN"/>
+                    <constraint firstItem="h3o-pt-8dU" firstAttribute="top" secondItem="Gd2-7L-wTx" secondAttribute="top" constant="5" id="F25-Qc-nX4"/>
+                    <constraint firstItem="h3o-pt-8dU" firstAttribute="leading" secondItem="Gd2-7L-wTx" secondAttribute="leading" constant="10" id="ebM-OV-kZd"/>
+                    <constraint firstItem="h3o-pt-8dU" firstAttribute="centerY" secondItem="Gd2-7L-wTx" secondAttribute="centerY" id="i7u-Dw-E0U"/>
+                    <constraint firstItem="h3o-pt-8dU" firstAttribute="centerX" secondItem="Gd2-7L-wTx" secondAttribute="centerX" id="mSg-hy-F6x"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Pr9-ea-G3D"/>
@@ -45,14 +45,5 @@
             </connections>
             <point key="canvasLocation" x="889.85507246376824" y="28.794642857142854"/>
         </tableViewCell>
-        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="JAA-pP-lxh">
-            <rect key="frame" x="0.0" y="0.0" width="131" height="31"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <segments>
-                <segment title="First"/>
-                <segment title="Second"/>
-            </segments>
-            <point key="canvasLocation" x="182" y="148"/>
-        </segmentedControl>
     </objects>
 </document>

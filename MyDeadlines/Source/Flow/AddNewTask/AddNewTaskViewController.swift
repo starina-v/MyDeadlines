@@ -1,20 +1,14 @@
-//
-//  AddNewTaskViewController.swift
-//  MyDeadlines
-//
-//  Created by Oleh Derkachov on 11.05.2021.
-//
-
 import Foundation
 import UIKit
 
-
-protocol AddNewTaskView: class {
+protocol AddNewTaskView: AnyObject {
 }
 
 class AddNewTaskViewController: UIViewController, AddNewTaskView {
     
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var labsField: UITextField!
+    @IBOutlet weak var practicalField: UITextField!
     
     private var presenter: AddNewTaskPresenter!
     
@@ -27,12 +21,26 @@ class AddNewTaskViewController: UIViewController, AddNewTaskView {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        getName()
-    }
-    
-    func getName() {
-        guard let name = nameField.text else { return }
-        presenter.save(name: name)
+        getTaskInfo()
     }
 }
 
+private extension AddNewTaskViewController {
+    
+    func generateItem(count: Int, name: String) -> [LessonModel] {
+        var labs: [LessonModel] = []
+        for item in 0..<count {
+            labs.append(LessonModel(name: "\(name) \(item+1)", deadline: Date()))
+        }
+        return labs
+    }
+    
+    func getTaskInfo() {
+        guard let name = nameField.text, let labsString = labsField.text, let practicalString = practicalField.text else { return }
+        let labsToInt = Int(labsString) ?? 0
+        let practToInt = Int(practicalString) ?? 0
+        let labs = generateItem(count: labsToInt, name: "Lab")
+        let practical = generateItem(count: practToInt, name: "Pract")
+        presenter.setTask(name: name, labs: labs, practical: practical)
+    }
+}

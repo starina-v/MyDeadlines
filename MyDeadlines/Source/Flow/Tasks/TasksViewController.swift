@@ -1,13 +1,5 @@
-//
-//  TasksViewController.swift
-//  MyDeadlines
-//
-//  Created by Oleh Derkachov on 11.05.2021.
-//
-
 import Foundation
 import UIKit
-
 
 protocol TasksView: AnyObject {
 }
@@ -18,12 +10,16 @@ class TasksViewController: UIViewController, TasksView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupNavigationBar()
     }
     
     func inject(presenter: TasksPresenter!) {
         self.presenter = presenter
     }
+}
+
+private extension TasksViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Tasks"

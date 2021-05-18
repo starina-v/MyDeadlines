@@ -279,10 +279,6 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SetDeadlinesCell
       }
 
-      func secondView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[1] as? UIKit.UIView
-      }
-
       fileprivate init() {}
     }
 
@@ -314,18 +310,12 @@ struct _R: Rswift.Validatable {
     struct addNewTask: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = AddNewTaskViewController
 
-      let addNewTaskViewController = StoryboardViewControllerResource<AddNewTaskViewController>(identifier: "AddNewTaskViewController")
       let bundle = R.hostingBundle
       let name = "AddNewTask"
-
-      func addNewTaskViewController(_: Void = ()) -> AddNewTaskViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addNewTaskViewController)
-      }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.addNewTask().addNewTaskViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addNewTaskViewController' could not be loaded from storyboard 'AddNewTask' as 'AddNewTaskViewController'.") }
       }
 
       fileprivate init() {}

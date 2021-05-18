@@ -1,32 +1,25 @@
-//
-//  AddNewTaskPresenter.swift
-//  MyDeadlines
-//
-//  Created by Oleh Derkachov on 11.05.2021.
-//
-
 import Foundation
 
 protocol AddNewTaskPresenter {
-    var tasks: [TaskModel] { get }
-    func save(name: String)
+    
+    func setTask(name: String, labs: [LessonModel], practical: [LessonModel])
 }
 
 final class AddNewTaskPresenterImp {
     
-    var tasks: [TaskModel] = []
-    
     private weak var view: AddNewTaskView?
+    private weak var flow: Flow?
     
-    init(view: AddNewTaskView) {
+    init(view: AddNewTaskView, flow: Flow) {
         self.view = view
-    }
-    
-    func save(name: String) {
-        print(name)
+        self.flow = flow
     }
 }
 
 //MARK: - TasksPresenter
 extension AddNewTaskPresenterImp: AddNewTaskPresenter {
+    
+    func setTask(name: String, labs: [LessonModel], practical: [LessonModel]) {
+        flow?.navigate(to: .setDeadlines(name, labs, practical))
+    }
 }

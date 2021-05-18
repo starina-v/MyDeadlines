@@ -5,6 +5,7 @@ import SwinjectAutoregistration
 enum Route {
     case main
     case addNewTask
+    case setDeadlines(String, [LessonModel], [LessonModel])
 }
 
 protocol Flow: AnyObject {
@@ -44,6 +45,8 @@ extension AppFlow: Flow {
             navigationToMain()
         case .addNewTask:
             navigationToAddNewTask()
+        case .setDeadlines(let name, let labs, let practical):
+            navigationToSetDeadlines(name: name, labs: labs, practical: practical)
         }
     }
 }
@@ -55,8 +58,13 @@ private extension AppFlow {
     }
     
     func navigationToAddNewTask() {
-        let addNewTaskViewController = resolver ~> AddNewTaskViewController.self
+        guard let addNewTaskViewController = resolver.resolve(AddNewTaskViewController.self) else { return  }
         tasksRootViewController.pushViewController(addNewTaskViewController)
+    }
+    
+    func navigationToSetDeadlines(name: String, labs: [LessonModel], practical: [LessonModel]) {
+        guard let setDeadlinesViewController = resolver.resolve(SetDeadlinesViewController.self, arguments: name, labs, practical) else { return }
+        tasksRootViewController.pushViewController(setDeadlinesViewController)
     }
 }
 
