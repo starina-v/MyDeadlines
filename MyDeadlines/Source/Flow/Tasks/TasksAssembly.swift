@@ -10,10 +10,8 @@ extension TasksAssembly: Assembly {
     func assemble(container: Container) {
         container.register(TasksViewController.self) { resolver in
             let view = R.storyboard.tasks.instantiateInitialViewController()!
-            
             let presenter = resolver.resolve(TasksPresenter.self, argument: view)!
             view.inject(presenter: presenter)
-            
             return view
         }
         

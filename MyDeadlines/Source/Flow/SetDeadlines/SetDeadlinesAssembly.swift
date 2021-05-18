@@ -10,10 +10,8 @@ extension SetDeadlinesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(SetDeadlinesViewController.self) { (resolver, name: String, labs: [LessonModel], practical: [LessonModel]) in
             let view = R.storyboard.setDeadlines.instantiateInitialViewController()!
-            
             let presenter = resolver.resolve(SetDeadlinesPresenter.self, arguments: view, name, labs, practical)!
             view.inject(presenter: presenter)
-            
             return view
         }
         

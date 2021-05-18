@@ -4,7 +4,7 @@ import UIKit
 protocol SetDeadlinesView: AnyObject {
 }
 
-class SetDeadlinesViewController: UIViewController, SetDeadlinesView {
+class SetDeadlinesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,6 +22,9 @@ class SetDeadlinesViewController: UIViewController, SetDeadlinesView {
     }
 }
 
+extension SetDeadlinesViewController: SetDeadlinesView {
+}
+
 extension SetDeadlinesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,10 +33,11 @@ extension SetDeadlinesViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: SetDeadlinesCell.self)
-        cell.lessonNumber.text = "\(presenter.task.total[indexPath.row].name)"
+        cell.update(with: presenter.task.total[indexPath.row])
         return cell
     }
 }
+
 
 private extension SetDeadlinesViewController {
     

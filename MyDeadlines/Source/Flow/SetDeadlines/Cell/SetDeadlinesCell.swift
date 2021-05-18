@@ -1,9 +1,9 @@
 import UIKit
 
-class SetDeadlinesCell: UITableViewCell {
+final class SetDeadlinesCell: UITableViewCell {
     
-    @IBOutlet weak var lessonNumber: UILabel!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var lessonNumber: UILabel!
+    @IBOutlet private weak var datePicker: UIDatePicker!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -14,6 +14,9 @@ class SetDeadlinesCell: UITableViewCell {
 
 // MARK: - Update
 extension SetDeadlinesCell {
+    func update(with task: LessonModel) {
+        lessonNumber.text = task.name
+    }
 }
 
 // MARK: - Private
