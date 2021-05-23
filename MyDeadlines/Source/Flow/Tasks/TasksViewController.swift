@@ -4,7 +4,7 @@ import UIKit
 protocol TasksView: AnyObject {
 }
 
-class TasksViewController: UIViewController, TasksView {
+class TasksViewController: UIViewController {
     
     private var presenter: TasksPresenter!
     
@@ -17,6 +17,8 @@ class TasksViewController: UIViewController, TasksView {
     func inject(presenter: TasksPresenter!) {
         self.presenter = presenter
     }
+}
+extension TasksViewController: TasksView {
 }
 
 private extension TasksViewController {

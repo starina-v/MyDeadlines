@@ -8,15 +8,15 @@ final class SetDeadlinesAssembly {}
 extension SetDeadlinesAssembly: Assembly {
     
     func assemble(container: Container) {
-        container.register(SetDeadlinesViewController.self) { (resolver, name: String, labs: [LessonModel], practical: [LessonModel]) in
+        container.register(SetDeadlinesViewController.self) { (resolver, task: TaskModel) in
             let view = R.storyboard.setDeadlines.instantiateInitialViewController()!
-            let presenter = resolver.resolve(SetDeadlinesPresenter.self, arguments: view, name, labs, practical)!
+            let presenter = resolver.resolve(SetDeadlinesPresenter.self, arguments: view, task)!
             view.inject(presenter: presenter)
             return view
         }
         
-        container.register(SetDeadlinesPresenter.self) { (resolver, view: SetDeadlinesViewController, name: String, labs: [LessonModel], practical: [LessonModel]) in
-            SetDeadlinesPresenterImp(view: view, name: name, labs: labs, practical: practical)
+        container.register(SetDeadlinesPresenter.self) { (resolver, view: SetDeadlinesViewController, task: TaskModel) in
+            SetDeadlinesPresenterImp(view: view, task: task)
         }
     }
 }

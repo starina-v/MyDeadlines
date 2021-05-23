@@ -14,7 +14,6 @@ class SetDeadlinesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewAppearance()
-        nameLabel.text = presenter.name
     }
     
     func inject(presenter: SetDeadlinesPresenter!) {
@@ -28,16 +27,17 @@ extension SetDeadlinesViewController: SetDeadlinesView {
 extension SetDeadlinesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.task.total.count
+        let lessons = presenter.task.labs.count + presenter.task.practical.count
+        return lessons
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: SetDeadlinesCell.self)
-        cell.update(with: presenter.task.total[indexPath.row])
+        let lessons = presenter.task.labs + presenter.task.practical
+        cell.update(with: lessons[indexPath.row])
         return cell
     }
 }
-
 
 private extension SetDeadlinesViewController {
     

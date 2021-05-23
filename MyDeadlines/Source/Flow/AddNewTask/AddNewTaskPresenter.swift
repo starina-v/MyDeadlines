@@ -1,8 +1,10 @@
 import Foundation
 
+
+
 protocol AddNewTaskPresenter {
     
-    func setTask(name: String, labs: [LessonModel], practical: [LessonModel])
+    func setTask(with task: TaskModel)
 }
 
 final class AddNewTaskPresenterImp {
@@ -18,8 +20,7 @@ final class AddNewTaskPresenterImp {
 
 //MARK: - TasksPresenter
 extension AddNewTaskPresenterImp: AddNewTaskPresenter {
-    
-    func setTask(name: String, labs: [LessonModel], practical: [LessonModel]) {
-        flow?.navigate(to: .setDeadlines(name, labs, practical))
+    func setTask(with task: TaskModel) {
+        flow?.navigate(to: .setDeadlines(task))
     }
 }

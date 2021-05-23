@@ -4,11 +4,11 @@ import UIKit
 protocol AddNewTaskView: AnyObject {
 }
 
-class AddNewTaskViewController: UIViewController, AddNewTaskView {
+final class AddNewTaskViewController: UIViewController, AddNewTaskView {
     
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var labsField: UITextField!
-    @IBOutlet weak var practicalField: UITextField!
+    @IBOutlet private weak var nameField: UITextField!
+    @IBOutlet private weak var labsField: UITextField!
+    @IBOutlet private weak var practicalField: UITextField!
     
     private var presenter: AddNewTaskPresenter!
     
@@ -19,13 +19,13 @@ class AddNewTaskViewController: UIViewController, AddNewTaskView {
     func inject(presenter: AddNewTaskPresenter!) {
         self.presenter = presenter
     }
+}
+
+private extension AddNewTaskViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         getTaskInfo()
     }
-}
-
-private extension AddNewTaskViewController {
     
     func generateItem(count: Int, name: String) -> [LessonModel] {
         var labs: [LessonModel] = []
@@ -41,6 +41,7 @@ private extension AddNewTaskViewController {
         let practToInt = Int(practicalString) ?? 0
         let labs = generateItem(count: labsToInt, name: "Lab")
         let practical = generateItem(count: practToInt, name: "Pract")
-        presenter.setTask(name: name, labs: labs, practical: practical)
+        let task = TaskModel(name: name, labs: labs, practical: practical)
+        presenter.setTask(with: task)
     }
 }
