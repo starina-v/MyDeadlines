@@ -50,7 +50,7 @@ private extension CreateTaskViewController {
     
     @IBAction func createButtonTapped(_ sender: Any) {
         updateTask()
-        presenter.saveTask()
+        validate()
     }
     
     func generateItem(count: Int, name: String) -> [LessonModel] {
@@ -67,6 +67,22 @@ private extension CreateTaskViewController {
         let practical = generateItem(count: pracCount, name: "Pract")
         let taskDetails = TaskModel(name: name, labs: labs, practical: practical)
         presenter.setTaskDetails(with: taskDetails)
+    }
+    
+    func validate() {
+        if nameField.text == "" {
+            showAlert(title: "Please, enter task name", message: "")
+        } else if labsCount == 0, pracCount == 0 {
+            showAlert(title: "Please, enter labs or practical quantity", message: "")
+        } else {
+            presenter.saveTask()
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
