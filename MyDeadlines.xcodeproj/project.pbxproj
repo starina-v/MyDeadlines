@@ -28,22 +28,24 @@
 		62E15AB0263838B6000060CB /* TargetTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15AAF263838B6000060CB /* TargetTypeExtension.swift */; };
 		62E15AB526383902000060CB /* PostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15AB426383902000060CB /* PostsApi.swift */; };
 		62E15AE6263852B1000060CB /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E15AE4263852B1000060CB /* PostTableViewCell.xib */; };
+		C93EF10A265FC68E0002A84F /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF109265FC68E0002A84F /* TasksCell.swift */; };
+		C93EF10C265FC69F0002A84F /* TasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93EF10B265FC69F0002A84F /* TasksCell.xib */; };
+		C93EF10F265FD41B0002A84F /* TaskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF10E265FD41B0002A84F /* TaskInfoViewController.swift */; };
+		C93EF111265FD4260002A84F /* TaskInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF110265FD4260002A84F /* TaskInfoPresenter.swift */; };
+		C93EF113265FD4330002A84F /* TaskInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF112265FD4330002A84F /* TaskInfoAssembly.swift */; };
+		C93EF115265FD43E0002A84F /* TaskInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93EF114265FD43E0002A84F /* TaskInfo.storyboard */; };
+		C97407E1265EDD2B00BE63C2 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97407E0265EDD2B00BE63C2 /* CreateTaskViewController.swift */; };
+		C97407E3265EDD4D00BE63C2 /* CreateTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97407E2265EDD4D00BE63C2 /* CreateTaskPresenter.swift */; };
+		C97407E5265EDD5B00BE63C2 /* CreateTaskAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97407E4265EDD5B00BE63C2 /* CreateTaskAssembly.swift */; };
+		C97407E7265EDD6A00BE63C2 /* CreateTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97407E6265EDD6A00BE63C2 /* CreateTask.storyboard */; };
+		C97407EA265EF0C000BE63C2 /* CreateTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97407E9265EF0C000BE63C2 /* CreateTaskCell.swift */; };
+		C97407EC265EF0EB00BE63C2 /* CreateTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97407EB265EF0EB00BE63C2 /* CreateTaskCell.xib */; };
 		C98364912649E37F0067D130 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98364902649E37F0067D130 /* TaskModel.swift */; };
 		C9CB2007264AF52A00284FFA /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB2006264AF52A00284FFA /* LessonModel.swift */; };
 		C9CB200A264AF57800284FFA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB2009264AF57800284FFA /* TasksViewController.swift */; };
 		C9CB200C264AF5AC00284FFA /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB200B264AF5AC00284FFA /* TasksPresenter.swift */; };
 		C9CB200E264AF5FF00284FFA /* TasksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB200D264AF5FF00284FFA /* TasksAssembly.swift */; };
 		C9CB2010264AF64900284FFA /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CB200F264AF64900284FFA /* Tasks.storyboard */; };
-		C9CB2012264AF91100284FFA /* AddNewTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CB2011264AF91100284FFA /* AddNewTask.storyboard */; };
-		C9CB2014264AF9A300284FFA /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB2013264AF9A300284FFA /* AddNewTaskViewController.swift */; };
-		C9CB2016264AF9D700284FFA /* AddNewTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB2015264AF9D700284FFA /* AddNewTaskPresenter.swift */; };
-		C9CB2018264AF9E600284FFA /* AddNewTaskAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB2017264AF9E600284FFA /* AddNewTaskAssembly.swift */; };
-		C9F2F14C263BDCAA002AC54B /* SetDeadlines.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F2F14B263BDCAA002AC54B /* SetDeadlines.storyboard */; };
-		C9F2F14E263BDCBD002AC54B /* SetDeadlinesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2F14D263BDCBD002AC54B /* SetDeadlinesAssembly.swift */; };
-		C9F2F150263BDCCF002AC54B /* SetDeadlinesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2F14F263BDCCF002AC54B /* SetDeadlinesPresenter.swift */; };
-		C9F2F152263BDCE3002AC54B /* SetDeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2F151263BDCE3002AC54B /* SetDeadlinesViewController.swift */; };
-		C9F2F15A263BE504002AC54B /* SetDeadlinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F2F159263BE504002AC54B /* SetDeadlinesCell.xib */; };
-		C9F2F15C263BE54E002AC54B /* SetDeadlinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2F15B263BE54E002AC54B /* SetDeadlinesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,22 +73,24 @@
 		62E15AE4263852B1000060CB /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		7BAE3045A85C48C8C4E727C5 /* Pods_MyDeadlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDeadlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818305E6402DA14EEAC1F17B /* Pods-MyDeadlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDeadlines.release.xcconfig"; path = "Target Support Files/Pods-MyDeadlines/Pods-MyDeadlines.release.xcconfig"; sourceTree = "<group>"; };
+		C93EF109265FC68E0002A84F /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
+		C93EF10B265FC69F0002A84F /* TasksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCell.xib; sourceTree = "<group>"; };
+		C93EF10E265FD41B0002A84F /* TaskInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoViewController.swift; sourceTree = "<group>"; };
+		C93EF110265FD4260002A84F /* TaskInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoPresenter.swift; sourceTree = "<group>"; };
+		C93EF112265FD4330002A84F /* TaskInfoAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoAssembly.swift; sourceTree = "<group>"; };
+		C93EF114265FD43E0002A84F /* TaskInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskInfo.storyboard; sourceTree = "<group>"; };
+		C97407E0265EDD2B00BE63C2 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
+		C97407E2265EDD4D00BE63C2 /* CreateTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskPresenter.swift; sourceTree = "<group>"; };
+		C97407E4265EDD5B00BE63C2 /* CreateTaskAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskAssembly.swift; sourceTree = "<group>"; };
+		C97407E6265EDD6A00BE63C2 /* CreateTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTask.storyboard; sourceTree = "<group>"; };
+		C97407E9265EF0C000BE63C2 /* CreateTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskCell.swift; sourceTree = "<group>"; };
+		C97407EB265EF0EB00BE63C2 /* CreateTaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTaskCell.xib; sourceTree = "<group>"; };
 		C98364902649E37F0067D130 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		C9CB2006264AF52A00284FFA /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 		C9CB2009264AF57800284FFA /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C9CB200B264AF5AC00284FFA /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
 		C9CB200D264AF5FF00284FFA /* TasksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAssembly.swift; sourceTree = "<group>"; };
 		C9CB200F264AF64900284FFA /* Tasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tasks.storyboard; sourceTree = "<group>"; };
-		C9CB2011264AF91100284FFA /* AddNewTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewTask.storyboard; sourceTree = "<group>"; };
-		C9CB2013264AF9A300284FFA /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
-		C9CB2015264AF9D700284FFA /* AddNewTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskPresenter.swift; sourceTree = "<group>"; };
-		C9CB2017264AF9E600284FFA /* AddNewTaskAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskAssembly.swift; sourceTree = "<group>"; };
-		C9F2F14B263BDCAA002AC54B /* SetDeadlines.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetDeadlines.storyboard; sourceTree = "<group>"; };
-		C9F2F14D263BDCBD002AC54B /* SetDeadlinesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDeadlinesAssembly.swift; sourceTree = "<group>"; };
-		C9F2F14F263BDCCF002AC54B /* SetDeadlinesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDeadlinesPresenter.swift; sourceTree = "<group>"; };
-		C9F2F151263BDCE3002AC54B /* SetDeadlinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDeadlinesViewController.swift; sourceTree = "<group>"; };
-		C9F2F159263BE504002AC54B /* SetDeadlinesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetDeadlinesCell.xib; sourceTree = "<group>"; };
-		C9F2F15B263BE54E002AC54B /* SetDeadlinesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDeadlinesCell.swift; sourceTree = "<group>"; };
 		CFDFF202CCA6E6383D44F044 /* Pods-MyDeadlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDeadlines.debug.xcconfig"; path = "Target Support Files/Pods-MyDeadlines/Pods-MyDeadlines.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,8 +204,8 @@
 				62324EBD263490480064D0B9 /* AppFlow.swift */,
 				624FC12826348E0B001377AB /* Launch */,
 				C9CB2008264AF54100284FFA /* Tasks */,
-				C96E0FA6263B236D006F5B17 /* AddNewTask */,
-				C9F2F14A263BDC84002AC54B /* SetDeadlines */,
+				C97407DF265EDCEE00BE63C2 /* CreateTask */,
+				C93EF10D265FD3F80002A84F /* TaskInfo */,
 				624FC12C26348E24001377AB /* Main */,
 			);
 			path = Flow;
@@ -305,38 +309,57 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C96E0FA6263B236D006F5B17 /* AddNewTask */ = {
+		C93EF108265FC67A0002A84F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C9CB2013264AF9A300284FFA /* AddNewTaskViewController.swift */,
-				C9CB2015264AF9D700284FFA /* AddNewTaskPresenter.swift */,
-				C9CB2017264AF9E600284FFA /* AddNewTaskAssembly.swift */,
-				C9CB2011264AF91100284FFA /* AddNewTask.storyboard */,
+				C93EF109265FC68E0002A84F /* TasksCell.swift */,
+				C93EF10B265FC69F0002A84F /* TasksCell.xib */,
 			);
-			path = AddNewTask;
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C93EF10D265FD3F80002A84F /* TaskInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C93EF10E265FD41B0002A84F /* TaskInfoViewController.swift */,
+				C93EF110265FD4260002A84F /* TaskInfoPresenter.swift */,
+				C93EF112265FD4330002A84F /* TaskInfoAssembly.swift */,
+				C93EF114265FD43E0002A84F /* TaskInfo.storyboard */,
+			);
+			path = TaskInfo;
+			sourceTree = "<group>";
+		};
+		C97407DF265EDCEE00BE63C2 /* CreateTask */ = {
+			isa = PBXGroup;
+			children = (
+				C97407E8265EF0A800BE63C2 /* Cell */,
+				C97407E0265EDD2B00BE63C2 /* CreateTaskViewController.swift */,
+				C97407E2265EDD4D00BE63C2 /* CreateTaskPresenter.swift */,
+				C97407E4265EDD5B00BE63C2 /* CreateTaskAssembly.swift */,
+				C97407E6265EDD6A00BE63C2 /* CreateTask.storyboard */,
+			);
+			path = CreateTask;
+			sourceTree = "<group>";
+		};
+		C97407E8265EF0A800BE63C2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C97407E9265EF0C000BE63C2 /* CreateTaskCell.swift */,
+				C97407EB265EF0EB00BE63C2 /* CreateTaskCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C9CB2008264AF54100284FFA /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				C93EF108265FC67A0002A84F /* Cell */,
 				C9CB2009264AF57800284FFA /* TasksViewController.swift */,
 				C9CB200B264AF5AC00284FFA /* TasksPresenter.swift */,
 				C9CB200D264AF5FF00284FFA /* TasksAssembly.swift */,
 				C9CB200F264AF64900284FFA /* Tasks.storyboard */,
 			);
 			path = Tasks;
-			sourceTree = "<group>";
-		};
-		C9F2F14A263BDC84002AC54B /* SetDeadlines */ = {
-			isa = PBXGroup;
-			children = (
-				C9F2F158263BE463002AC54B /* Cell */,
-				C9F2F151263BDCE3002AC54B /* SetDeadlinesViewController.swift */,
-				C9F2F14F263BDCCF002AC54B /* SetDeadlinesPresenter.swift */,
-				C9F2F14D263BDCBD002AC54B /* SetDeadlinesAssembly.swift */,
-				C9F2F14B263BDCAA002AC54B /* SetDeadlines.storyboard */,
-			);
-			path = SetDeadlines;
 			sourceTree = "<group>";
 		};
 		C9F2F153263BDFD0002AC54B /* Models */ = {
@@ -346,15 +369,6 @@
 				C9CB2006264AF52A00284FFA /* LessonModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		C9F2F158263BE463002AC54B /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				C9F2F15B263BE54E002AC54B /* SetDeadlinesCell.swift */,
-				C9F2F159263BE504002AC54B /* SetDeadlinesCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,12 +433,13 @@
 			files = (
 				624FC12F26348EF1001377AB /* LaunchScreen.storyboard in Resources */,
 				624FC10926348BF5001377AB /* Assets.xcassets in Resources */,
-				C9CB2012264AF91100284FFA /* AddNewTask.storyboard in Resources */,
+				C97407E7265EDD6A00BE63C2 /* CreateTask.storyboard in Resources */,
+				C97407EC265EF0EB00BE63C2 /* CreateTaskCell.xib in Resources */,
+				C93EF10C265FC69F0002A84F /* TasksCell.xib in Resources */,
 				624FC10426348BF3001377AB /* Main.storyboard in Resources */,
 				62E15AE6263852B1000060CB /* PostTableViewCell.xib in Resources */,
 				C9CB2010264AF64900284FFA /* Tasks.storyboard in Resources */,
-				C9F2F15A263BE504002AC54B /* SetDeadlinesCell.xib in Resources */,
-				C9F2F14C263BDCAA002AC54B /* SetDeadlines.storyboard in Resources */,
+				C93EF115265FD43E0002A84F /* TaskInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,25 +516,26 @@
 				62E15AA926383109000060CB /* Codable+Utils.swift in Sources */,
 				62E15AB526383902000060CB /* PostsApi.swift in Sources */,
 				62E15A9926383025000060CB /* ApiClient.swift in Sources */,
+				C93EF10F265FD41B0002A84F /* TaskInfoViewController.swift in Sources */,
 				C9CB200A264AF57800284FFA /* TasksViewController.swift in Sources */,
-				C9F2F15C263BE54E002AC54B /* SetDeadlinesCell.swift in Sources */,
-				C9F2F150263BDCCF002AC54B /* SetDeadlinesPresenter.swift in Sources */,
 				C9CB2007264AF52A00284FFA /* LessonModel.swift in Sources */,
+				C93EF10A265FC68E0002A84F /* TasksCell.swift in Sources */,
 				624FC10126348BF3001377AB /* MainViewController.swift in Sources */,
-				C9CB2018264AF9E600284FFA /* AddNewTaskAssembly.swift in Sources */,
 				62324EC22634940C0064D0B9 /* FlowAssembly.swift in Sources */,
 				62E15AA626383076000060CB /* ApiAuxiliary.swift in Sources */,
 				62324EE42634991D0064D0B9 /* R.generated.swift in Sources */,
-				C9CB2014264AF9A300284FFA /* AddNewTaskViewController.swift in Sources */,
-				C9F2F152263BDCE3002AC54B /* SetDeadlinesViewController.swift in Sources */,
+				C93EF113265FD4330002A84F /* TaskInfoAssembly.swift in Sources */,
+				C97407E5265EDD5B00BE63C2 /* CreateTaskAssembly.swift in Sources */,
 				6222B44826385AAB00ED0250 /* SceneDelegate.swift in Sources */,
 				C9CB200C264AF5AC00284FFA /* TasksPresenter.swift in Sources */,
 				624FC0FD26348BF3001377AB /* AppDelegate.swift in Sources */,
 				62324EC7263494210064D0B9 /* ServiceAssembly.swift in Sources */,
 				C98364912649E37F0067D130 /* TaskModel.swift in Sources */,
+				C97407E1265EDD2B00BE63C2 /* CreateTaskViewController.swift in Sources */,
+				C97407EA265EF0C000BE63C2 /* CreateTaskCell.swift in Sources */,
 				62324EE82634996B0064D0B9 /* MainPresenter.swift in Sources */,
-				C9F2F14E263BDCBD002AC54B /* SetDeadlinesAssembly.swift in Sources */,
-				C9CB2016264AF9D700284FFA /* AddNewTaskPresenter.swift in Sources */,
+				C93EF111265FD4260002A84F /* TaskInfoPresenter.swift in Sources */,
+				C97407E3265EDD4D00BE63C2 /* CreateTaskPresenter.swift in Sources */,
 				6222B445263855E800ED0250 /* PostTableViewCell.swift in Sources */,
 				62E15AB0263838B6000060CB /* TargetTypeExtension.swift in Sources */,
 				62324EBE263490480064D0B9 /* AppFlow.swift in Sources */,

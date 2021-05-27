@@ -26,8 +26,8 @@ private extension SceneDelegate {
             [
                 MainAssembly(),
                 TasksAssembly(),
-                AddNewTaskAssembly(),
-                SetDeadlinesAssembly()
+                CreateTaskAssembly(),
+                TaskInfoAssembly()
             ],
             parent: serviceAssembler)
         

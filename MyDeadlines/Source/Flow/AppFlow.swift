@@ -4,8 +4,8 @@ import SwinjectAutoregistration
 
 enum Route {
     case main
-    case addNewTask
-    case setDeadlines(TaskModel)
+    case createTask
+    case taskInfo
 }
 
 protocol Flow: AnyObject {
@@ -43,10 +43,10 @@ extension AppFlow: Flow {
         switch step {
         case .main:
             navigationToMain()
-        case .addNewTask:
-            navigationToAddNewTask()
-        case .setDeadlines(let task):
-            navigationToSetDeadlines(task: task)
+        case .createTask:
+            navigationToCreateTask()
+        case .taskInfo:
+            navigationToTaskInfo()
         }
     }
 }
@@ -57,14 +57,14 @@ private extension AppFlow {
     func navigationToMain() {
     }
     
-    func navigationToAddNewTask() {
-        guard let addNewTaskViewController = resolver.resolve(AddNewTaskViewController.self) else { return  }
-        tasksRootViewController.pushViewController(addNewTaskViewController)
+    func navigationToCreateTask() {
+        guard let createTaskViewController = resolver.resolve(CreateTaskViewController.self) else { return  }
+        tasksRootViewController.pushViewController(createTaskViewController)
     }
     
-    func navigationToSetDeadlines(task: TaskModel) {
-        guard let setDeadlinesViewController = resolver.resolve(SetDeadlinesViewController.self, argument: task) else { return }
-        tasksRootViewController.pushViewController(setDeadlinesViewController)
+    func navigationToTaskInfo() {
+        guard let taskInfoViewController = resolver.resolve(TaskInfoViewController.self) else { return  }
+        tasksRootViewController.pushViewController(taskInfoViewController)
     }
 }
 

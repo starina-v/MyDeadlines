@@ -91,21 +91,21 @@ struct R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
-    /// Storyboard `AddNewTask`.
-    static let addNewTask = _R.storyboard.addNewTask()
+    /// Storyboard `CreateTask`.
+    static let createTask = _R.storyboard.createTask()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
-    /// Storyboard `SetDeadlines`.
-    static let setDeadlines = _R.storyboard.setDeadlines()
+    /// Storyboard `TaskInfo`.
+    static let taskInfo = _R.storyboard.taskInfo()
     /// Storyboard `Tasks`.
     static let tasks = _R.storyboard.tasks()
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "AddNewTask", bundle: ...)`
-    static func addNewTask(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.addNewTask)
+    /// `UIStoryboard(name: "CreateTask", bundle: ...)`
+    static func createTask(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.createTask)
     }
     #endif
 
@@ -124,9 +124,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "SetDeadlines", bundle: ...)`
-    static func setDeadlines(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.setDeadlines)
+    /// `UIStoryboard(name: "TaskInfo", bundle: ...)`
+    static func taskInfo(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.taskInfo)
     }
     #endif
 
@@ -204,12 +204,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
+    /// Nib `CreateTaskCell`.
+    static let createTaskCell = _R.nib._CreateTaskCell()
     /// Nib `PostTableViewCell`.
     static let postTableViewCell = _R.nib._PostTableViewCell()
-    /// Nib `SetDeadlinesCell`.
-    static let setDeadlinesCell = _R.nib._SetDeadlinesCell()
+    /// Nib `TasksCell`.
+    static let tasksCell = _R.nib._TasksCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CreateTaskCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.createTaskCell) instead")
+    static func createTaskCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.createTaskCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "PostTableViewCell", in: bundle)`
@@ -220,19 +230,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "SetDeadlinesCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.setDeadlinesCell) instead")
-    static func setDeadlinesCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.setDeadlinesCell)
+    /// `UINib(name: "TasksCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tasksCell) instead")
+    static func tasksCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tasksCell)
     }
     #endif
+
+    static func createTaskCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CreateTaskCell? {
+      return R.nib.createTaskCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CreateTaskCell
+    }
 
     static func postTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PostTableViewCell? {
       return R.nib.postTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PostTableViewCell
     }
 
-    static func setDeadlinesCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SetDeadlinesCell? {
-      return R.nib.setDeadlinesCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SetDeadlinesCell
+    static func tasksCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TasksCell? {
+      return R.nib.tasksCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TasksCell
     }
 
     fileprivate init() {}
@@ -260,6 +274,17 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _CreateTaskCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CreateTaskCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CreateTaskCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CreateTaskCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _PostTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "PostTableViewCell"
@@ -271,12 +296,12 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _SetDeadlinesCell: Rswift.NibResourceType {
+    struct _TasksCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "SetDeadlinesCell"
+      let name = "TasksCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SetDeadlinesCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SetDeadlinesCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TasksCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TasksCell
       }
 
       fileprivate init() {}
@@ -290,7 +315,7 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
-      try addNewTask.validate()
+      try createTask.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
@@ -299,7 +324,7 @@ struct _R: Rswift.Validatable {
       try main.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try setDeadlines.validate()
+      try taskInfo.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try tasks.validate()
@@ -307,11 +332,11 @@ struct _R: Rswift.Validatable {
     }
 
     #if os(iOS) || os(tvOS)
-    struct addNewTask: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = AddNewTaskViewController
+    struct createTask: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = CreateTaskViewController
 
       let bundle = R.hostingBundle
-      let name = "AddNewTask"
+      let name = "CreateTask"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -355,21 +380,15 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct setDeadlines: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = SetDeadlinesViewController
+    struct taskInfo: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = TaskInfoViewController
 
       let bundle = R.hostingBundle
-      let name = "SetDeadlines"
-      let setDeadlinesViewController = StoryboardViewControllerResource<SetDeadlinesViewController>(identifier: "SetDeadlinesViewController")
-
-      func setDeadlinesViewController(_: Void = ()) -> SetDeadlinesViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: setDeadlinesViewController)
-      }
+      let name = "TaskInfo"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.setDeadlines().setDeadlinesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'setDeadlinesViewController' could not be loaded from storyboard 'SetDeadlines' as 'SetDeadlinesViewController'.") }
       }
 
       fileprivate init() {}

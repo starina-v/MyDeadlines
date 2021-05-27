@@ -9,7 +9,7 @@ import UIKit
 import SwifterSwift
 import SafariServices
 
-protocol MainView: class {
+protocol MainView: AnyObject {
 
     func update()
 }

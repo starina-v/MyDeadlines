@@ -2,10 +2,13 @@ import Foundation
 
 protocol TasksPresenter {
     
+    var tasks: [TaskModel] { get }
     func addNewTask()
 }
 
 final class TasksPresenterImp {
+    
+    var tasks: [TaskModel] = []
     
     private weak var view: TasksView?
     private weak var flow: Flow?
@@ -20,6 +23,6 @@ final class TasksPresenterImp {
 extension TasksPresenterImp: TasksPresenter {
     
     func addNewTask() {
-        flow?.navigate(to: .addNewTask)
+        flow?.navigate(to: .createTask)
     }
 }

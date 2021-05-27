@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="NUe-Fc-EC3" customClass="CreateTaskCell" customModule="MyDeadlines" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NUe-Fc-EC3" id="C6L-tS-dPB">
+                <rect key="frame" x="0.0" y="0.0" width="408" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-z9-wLp">
+                        <rect key="frame" x="10" y="0.0" width="42" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Qcf-oz-8Qm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VSv-qq-L9v">
+                        <rect key="frame" x="78" y="0.0" width="320" height="60"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="ZAN-dg-11l"/>
+                        </constraints>
+                    </datePicker>
+                </subviews>
+                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                <constraints>
+                    <constraint firstItem="VSv-qq-L9v" firstAttribute="top" secondItem="C6L-tS-dPB" secondAttribute="top" id="3R0-qU-u0E"/>
+                    <constraint firstAttribute="bottom" secondItem="VSv-qq-L9v" secondAttribute="bottom" id="8sD-2f-bpC"/>
+                    <constraint firstItem="bdK-z9-wLp" firstAttribute="centerY" secondItem="C6L-tS-dPB" secondAttribute="centerY" id="Fkc-5y-cAT"/>
+                    <constraint firstItem="bdK-z9-wLp" firstAttribute="top" secondItem="C6L-tS-dPB" secondAttribute="top" id="PFR-QF-FO6"/>
+                    <constraint firstAttribute="trailing" secondItem="VSv-qq-L9v" secondAttribute="trailing" constant="10" id="bjR-74-WFS"/>
+                    <constraint firstItem="bdK-z9-wLp" firstAttribute="leading" secondItem="C6L-tS-dPB" secondAttribute="leading" constant="10" id="fCR-aX-WSW"/>
+                    <constraint firstAttribute="bottom" secondItem="bdK-z9-wLp" secondAttribute="bottom" id="id7-Cw-esF"/>
+                    <constraint firstItem="VSv-qq-L9v" firstAttribute="centerY" secondItem="C6L-tS-dPB" secondAttribute="centerY" id="xQi-U0-uUr"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="10"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="taskDeadline" destination="VSv-qq-L9v" id="1Aa-eh-n88"/>
+                <outlet property="taskName" destination="bdK-z9-wLp" id="qU3-8q-Dhv"/>
+            </connections>
+            <point key="canvasLocation" x="78.260869565217391" y="60.267857142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
