@@ -46,6 +46,7 @@
 		C9CB200C264AF5AC00284FFA /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB200B264AF5AC00284FFA /* TasksPresenter.swift */; };
 		C9CB200E264AF5FF00284FFA /* TasksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB200D264AF5FF00284FFA /* TasksAssembly.swift */; };
 		C9CB2010264AF64900284FFA /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CB200F264AF64900284FFA /* Tasks.storyboard */; };
+		C9D0C358265FF717002BCC76 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0C357265FF717002BCC76 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		C9CB200B264AF5AC00284FFA /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
 		C9CB200D264AF5FF00284FFA /* TasksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAssembly.swift; sourceTree = "<group>"; };
 		C9CB200F264AF64900284FFA /* Tasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tasks.storyboard; sourceTree = "<group>"; };
+		C9D0C357265FF717002BCC76 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CFDFF202CCA6E6383D44F044 /* Pods-MyDeadlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDeadlines.debug.xcconfig"; path = "Target Support Files/Pods-MyDeadlines/Pods-MyDeadlines.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 		624FC12626348DE3001377AB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				C9D0C35926605F6E002BCC76 /* DataManager */,
 				624FC12726348DE8001377AB /* CoreData */,
 				62E15AAD263831B1000060CB /* Networking */,
 			);
@@ -360,6 +363,14 @@
 				C9CB200F264AF64900284FFA /* Tasks.storyboard */,
 			);
 			path = Tasks;
+			sourceTree = "<group>";
+		};
+		C9D0C35926605F6E002BCC76 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C9D0C357265FF717002BCC76 /* DataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		C9F2F153263BDFD0002AC54B /* Models */ = {
@@ -513,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CB200E264AF5FF00284FFA /* TasksAssembly.swift in Sources */,
+				C9D0C358265FF717002BCC76 /* DataManager.swift in Sources */,
 				62E15AA926383109000060CB /* Codable+Utils.swift in Sources */,
 				62E15AB526383902000060CB /* PostsApi.swift in Sources */,
 				62E15A9926383025000060CB /* ApiClient.swift in Sources */,

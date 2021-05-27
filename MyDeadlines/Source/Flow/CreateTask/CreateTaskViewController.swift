@@ -37,18 +37,20 @@ private extension CreateTaskViewController {
     @IBAction func labStepperTapped(_ sender: UIStepper) {
         self.labsCount = Int(sender.value)
         labLabel.text = "Labs quantity: \(labsCount)"
-        GetTaskInfo()
+        updateTask()
         tableView.reloadData()
     }
     
     @IBAction func pracStepperTapped(_ sender: UIStepper) {
         self.pracCount = Int(sender.value)
         pracLabel.text = "Practical quantity: \(pracCount)"
-        GetTaskInfo()
+        updateTask()
         tableView.reloadData()
     }
     
-    @IBAction func createButton(_ sender: Any) {
+    @IBAction func createButtonTapped(_ sender: Any) {
+        updateTask()
+        presenter.saveTask()
     }
     
     func generateItem(count: Int, name: String) -> [LessonModel] {
@@ -59,25 +61,25 @@ private extension CreateTaskViewController {
         return labs
     }
     
-    func GetTaskInfo() {
+    func updateTask() {
         guard let name = nameField.text else { return }
         let labs = generateItem(count: labsCount, name: "Lab")
         let practical = generateItem(count: pracCount, name: "Pract")
-        let task = TaskModel(name: name, labs: labs, practical: practical)
-        presenter.setTask(with: task)
+        let taskDetails = TaskModel(name: name, labs: labs, practical: practical)
+        presenter.setTaskDetails(with: taskDetails)
     }
 }
 
 extension CreateTaskViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let lessons = presenter.task.labs.count + presenter.task.practical.count
+        let lessons = (presenter.task.labs.count + presenter.task.practical.count)
         return lessons
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: CreateTaskCell.self)
-        let lessons = presenter.task.labs + presenter.task.practical
+        let lessons = (presenter.task.labs + presenter.task.practical)
         cell.update(with: lessons[indexPath.row])
         return cell
     }

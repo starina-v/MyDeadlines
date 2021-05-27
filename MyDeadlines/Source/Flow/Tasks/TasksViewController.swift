@@ -2,6 +2,8 @@ import Foundation
 import UIKit
 
 protocol TasksView: AnyObject {
+    
+    func update()
 }
 
 class TasksViewController: UIViewController {
@@ -17,11 +19,21 @@ class TasksViewController: UIViewController {
         setupViewAppearance()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.getTasks()
+    }
+    
     func inject(presenter: TasksPresenter!) {
         self.presenter = presenter
     }
 }
 extension TasksViewController: TasksView {
+    
+    func update() {
+        tableView?.reloadData()
+    }
 }
 
 extension TasksViewController: UITableViewDelegate, UITableViewDataSource {

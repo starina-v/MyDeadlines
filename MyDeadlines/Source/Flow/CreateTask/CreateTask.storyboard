@@ -39,14 +39,14 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="bG9-3s-GDu"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Create"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="createButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="r7a-ol-fvS"/>
+                                                            <action selector="createButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kNd-cJ-5ln"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

@@ -6,6 +6,7 @@ enum Route {
     case main
     case createTask
     case taskInfo
+    case tasks
 }
 
 protocol Flow: AnyObject {
@@ -47,6 +48,8 @@ extension AppFlow: Flow {
             navigationToCreateTask()
         case .taskInfo:
             navigationToTaskInfo()
+        case .tasks:
+            navigationToTasks()
         }
     }
 }
@@ -65,6 +68,11 @@ private extension AppFlow {
     func navigationToTaskInfo() {
         guard let taskInfoViewController = resolver.resolve(TaskInfoViewController.self) else { return  }
         tasksRootViewController.pushViewController(taskInfoViewController)
+    }
+    
+    func navigationToTasks() {
+        //guard let tasksViewController = resolver.resolve(TasksViewController.self) else { return  }
+        tasksRootViewController.popViewController()
     }
 }
 

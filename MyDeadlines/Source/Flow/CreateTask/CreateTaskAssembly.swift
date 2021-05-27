@@ -17,7 +17,8 @@ extension CreateTaskAssembly: Assembly {
         
         container.register(CreateTaskPresenter.self) { (resolver, view: CreateTaskViewController) in
             let flow = resolver ~> AppFlow.self
-            let presenter = CreateTaskPresenterImp(view: view, flow: flow)
+            let dataManager = resolver ~> DataManager.self
+            let presenter = CreateTaskPresenterImp(view: view, flow: flow, dataManager: dataManager)
             return presenter
         }
     }
