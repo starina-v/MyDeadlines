@@ -2,6 +2,9 @@ import Foundation
 import UIKit
 
 protocol CreateTaskView: AnyObject {
+    
+    func showAlert(title: String, message: String)
+    func setName()
 }
 
 final class CreateTaskViewController: UIViewController {
@@ -13,8 +16,7 @@ final class CreateTaskViewController: UIViewController {
     @IBOutlet private weak var labLabel: UILabel!
     @IBOutlet private weak var pracLabel: UILabel!
     
-    private var labsCount = 0
-    private var pracCount = 0
+    
     
     private var presenter: CreateTaskPresenter!
     
@@ -30,59 +32,38 @@ final class CreateTaskViewController: UIViewController {
 }
 
 extension CreateTaskViewController: CreateTaskView {
-}
-
-private extension CreateTaskViewController {
-    
-    @IBAction func labStepperTapped(_ sender: UIStepper) {
-        self.labsCount = Int(sender.value)
-        labLabel.text = "Labs quantity: \(labsCount)"
-        updateTask()
-        tableView.reloadData()
-    }
-    
-    @IBAction func pracStepperTapped(_ sender: UIStepper) {
-        self.pracCount = Int(sender.value)
-        pracLabel.text = "Practical quantity: \(pracCount)"
-        updateTask()
-        tableView.reloadData()
-    }
-    
-    @IBAction func createButtonTapped(_ sender: Any) {
-        updateTask()
-        validate()
-    }
-    
-    func generateItem(count: Int, name: String) -> [LessonModel] {
-        var labs: [LessonModel] = []
-        for item in 0..<count {
-            labs.append(LessonModel(name: "\(name) \(item+1)", deadline: Date()))
-        }
-        return labs
-    }
-    
-    func updateTask() {
-        guard let name = nameField.text else { return }
-        let labs = generateItem(count: labsCount, name: "Lab")
-        let practical = generateItem(count: pracCount, name: "Pract")
-        let taskDetails = TaskModel(name: name, labs: labs, practical: practical)
-        presenter.setTaskDetails(with: taskDetails)
-    }
-    
-    func validate() {
-        if nameField.text == "" {
-            showAlert(title: "Please, enter task name", message: "")
-        } else if labsCount == 0, pracCount == 0 {
-            showAlert(title: "Please, enter labs or practical quantity", message: "")
-        } else {
-            presenter.saveTask()
-        }
-    }
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func setName() {
+        guard let name = nameField.text else { return }
+        presenter.name = name
+    }
+}
+
+private extension CreateTaskViewController {
+    
+    @IBAction func labStepperTapped(_ sender: UIStepper) {
+        presenter.labsCount = Int(sender.value)
+        labLabel.text = "Labs quantity: \(presenter.labsCount)"
+        presenter.updateTask()
+        tableView.reloadData()
+    }
+    
+    @IBAction func pracStepperTapped(_ sender: UIStepper) {
+        presenter.pracCount = Int(sender.value)
+        pracLabel.text = "Practical quantity: \(presenter.pracCount)"
+        presenter.updateTask()
+        tableView.reloadData()
+    }
+    
+    @IBAction func createButtonTapped(_ sender: Any) {
+        presenter.updateTask()
+        presenter.validate()
     }
 }
 
@@ -108,7 +89,6 @@ private extension CreateTaskViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .clear
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(nibWithCellClass: CreateTaskCell.self)
         
@@ -118,7 +98,7 @@ private extension CreateTaskViewController {
         pracStepper.value = 0
         pracStepper.minimumValue = 0
         
-        labLabel.text = "Labs quantity: \(labsCount)"
-        pracLabel.text = "Practical quantity: \(pracCount)"
+        labLabel.text = "Labs quantity: \(presenter.labsCount)"
+        pracLabel.text = "Practical quantity: \(presenter.pracCount)"
     }
 }

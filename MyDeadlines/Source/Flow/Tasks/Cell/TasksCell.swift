@@ -11,13 +11,19 @@ final class TasksCell: UITableViewCell {
         
         setupViewAppearance()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: .init(top: 10, left: 10, bottom: 0, right: 10))
+    }
 }
 
 extension TasksCell {
     
     func update(with task: TaskModel) {
         nameLabel.text = task.name
-        tasksCount.text = "Total: \(task.labs.count + task.practical.count)"
+        tasksCount.text = "total: \(task.labs.count + task.practical.count)"
     }
 }
 
