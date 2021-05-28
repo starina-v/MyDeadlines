@@ -15,8 +15,43 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="41p-hZ-fI3">
+                                <rect key="frame" x="10" y="54" width="394" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbc-SF-vPJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpY-Xu-Zfk">
+                                                <rect key="frame" x="155" y="10" width="84" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="MgQ-cY-3N8"/>
+                                            <constraint firstAttribute="bottom" secondItem="dpY-Xu-Zfk" secondAttribute="bottom" constant="10" id="Nli-FT-cLP"/>
+                                            <constraint firstItem="dpY-Xu-Zfk" firstAttribute="centerX" secondItem="Qbc-SF-vPJ" secondAttribute="centerX" id="aom-3U-Sez"/>
+                                            <constraint firstItem="dpY-Xu-Zfk" firstAttribute="top" secondItem="Qbc-SF-vPJ" secondAttribute="top" constant="10" id="ybq-fF-kHC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEr-3i-5Y0">
+                                        <rect key="frame" x="0.0" y="64" width="394" height="754"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="41p-hZ-fI3" secondAttribute="trailing" constant="10" id="9WD-8O-hA4"/>
+                            <constraint firstItem="41p-hZ-fI3" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="10" id="IKW-im-8CF"/>
+                            <constraint firstItem="41p-hZ-fI3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="wIA-5I-s8H"/>
+                            <constraint firstItem="41p-hZ-fI3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="zg8-aw-e1w"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -25,6 +60,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

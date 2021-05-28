@@ -47,6 +47,10 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         cell.update(with: presenter.tasks[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.onTaksInfo()
+    }
 }
 
 private extension TasksViewController {
