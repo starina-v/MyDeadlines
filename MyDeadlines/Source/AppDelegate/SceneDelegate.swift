@@ -38,5 +38,6 @@ private extension SceneDelegate {
         
         self.window?.rootViewController = appFlow.root
         self.window?.makeKeyAndVisible()
+        
     }
 }

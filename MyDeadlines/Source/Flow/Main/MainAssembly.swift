@@ -1,10 +1,3 @@
-//
-//  ViewControllerAssembly.swift
-//  MyDeadlines
-//
-//  Created by Vlad Starina on 24.04.2021.
-//
-
 import Rswift
 import Swinject
 import SwinjectAutoregistration
