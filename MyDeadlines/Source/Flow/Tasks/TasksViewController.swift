@@ -68,7 +68,7 @@ private extension TasksViewController {
     private func setupViewAppearance() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .clear
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(nibWithCellClass: TasksCell.self)
     }
     

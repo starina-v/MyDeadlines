@@ -17,17 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fWN-8c-jhf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="fWN-8c-jhf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3f3-C7-bqq"/>
-                            <constraint firstItem="fWN-8c-jhf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XXu-IL-wT5"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fWN-8c-jhf" secondAttribute="bottom" id="eOe-gg-ch3"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fWN-8c-jhf" secondAttribute="trailing" id="vrE-at-h7v"/>
+                            <constraint firstItem="fWN-8c-jhf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="XXu-IL-wT5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fWN-8c-jhf" secondAttribute="bottom" constant="10" id="eOe-gg-ch3"/>
+                            <constraint firstItem="fWN-8c-jhf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="lB5-en-xnS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fWN-8c-jhf" secondAttribute="trailing" constant="10" id="vrE-at-h7v"/>
                         </constraints>
                     </view>
                     <connections>
@@ -40,11 +45,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

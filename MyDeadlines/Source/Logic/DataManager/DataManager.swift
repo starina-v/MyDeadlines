@@ -7,11 +7,7 @@ protocol DataManager {
 }
 
 final class DataManagerImp {
-    private var tasks: [TaskModel] // private (set)
-    
-    init(tasks: [TaskModel]) {
-        self.tasks = tasks
-    }
+    private var tasks: [TaskModel] = []
 }
 
 extension DataManagerImp: DataManager {

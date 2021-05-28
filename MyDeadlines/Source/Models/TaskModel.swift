@@ -1,7 +1,7 @@
 import Foundation
 
 struct TaskModel {
-    let name: String
+    var name: String
     let labs: [LessonModel]
     let practical: [LessonModel]
 }

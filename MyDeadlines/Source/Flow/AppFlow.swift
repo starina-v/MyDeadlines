@@ -61,17 +61,16 @@ private extension AppFlow {
     }
     
     func navigationToCreateTask() {
-        guard let createTaskViewController = resolver.resolve(CreateTaskViewController.self) else { return  }
+        let createTaskViewController = resolver ~> CreateTaskViewController.self
         tasksRootViewController.pushViewController(createTaskViewController)
     }
     
     func navigationToTaskInfo() {
-        guard let taskInfoViewController = resolver.resolve(TaskInfoViewController.self) else { return  }
+        let taskInfoViewController = resolver ~> TaskInfoViewController.self
         tasksRootViewController.pushViewController(taskInfoViewController)
     }
     
     func navigationToTasks() {
-        //guard let tasksViewController = resolver.resolve(TasksViewController.self) else { return  }
         tasksRootViewController.popViewController()
     }
 }
