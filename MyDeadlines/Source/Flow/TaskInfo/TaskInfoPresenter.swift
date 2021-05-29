@@ -5,6 +5,8 @@ protocol TaskInfoPresenter {
     var task: TaskModel { get set }
     var index: Int { get }
     func replace()
+    func removeItem(lessonIndex: Int)
+    func getOneTask()
 }
 
 final class TaskInfoPresenterImp {
@@ -27,7 +29,18 @@ final class TaskInfoPresenterImp {
 
 extension TaskInfoPresenterImp: TaskInfoPresenter {
     
+    func getOneTask() {
+        guard let newTask = dataManager?.getOneTask(index: index) else { return }
+        task = newTask
+        self.view?.update()
+    }
+    
     func replace() {
-        dataManager?.replaceData(newTask: task, index: index)
+        dataManager?.replaceTask(newTask: task, index: index)
+    }
+    
+    func removeItem(lessonIndex: Int) {
+        dataManager?.removeLesson(taskIndex: index, lessonIndex: lessonIndex)
+        getOneTask()
     }
 }

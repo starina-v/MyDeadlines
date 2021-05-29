@@ -5,7 +5,8 @@ protocol TasksPresenter {
     var tasks: [TaskModel] { get }
     func addNewTask()
     func getTasks()
-    func onTaksInfo(indexPath: Int)
+    func onTaksInfo(index: Int)
+    func removeItem(index: Int)
 }
 
 final class TasksPresenterImp {
@@ -36,7 +37,12 @@ extension TasksPresenterImp: TasksPresenter {
         flow?.navigate(to: .createTask)
     }
     
-    func onTaksInfo(indexPath: Int) {
-        flow?.navigate(to: .taskInfo(dataManager?.onTask(index: indexPath) ?? TaskModel(name: "", lessons: [], progress: 0), indexPath))
+    func onTaksInfo(index: Int) {
+        flow?.navigate(to: .taskInfo(dataManager?.onTask(index: index) ?? TaskModel(name: "", lessons: [], progress: 0), index))
+    }
+    
+    func removeItem(index: Int) {
+        dataManager?.removeTask(index: index)
+        getTasks()
     }
 }

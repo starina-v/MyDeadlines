@@ -2,6 +2,8 @@ import Foundation
 import UIKit
 
 protocol TaskInfoView: AnyObject {
+    
+    func update()
 }
 
 final class TaskInfoViewController: UIViewController {
@@ -18,12 +20,22 @@ final class TaskInfoViewController: UIViewController {
         nameLabel.text = presenter.task.name
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.getOneTask()
+    }
+    
     func inject(presenter: TaskInfoPresenter!) {
         self.presenter = presenter
     }
 }
 
 extension TaskInfoViewController: TaskInfoView {
+    
+    func update() {
+        tableView?.reloadData()
+    }
 }
 
 extension TaskInfoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -40,6 +52,12 @@ extension TaskInfoViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.update(with: presenter.task.lessons[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.removeItem(lessonIndex: indexPath.row)
+        }
     }
 }
 
