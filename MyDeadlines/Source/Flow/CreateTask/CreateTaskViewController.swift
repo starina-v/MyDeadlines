@@ -16,8 +16,6 @@ final class CreateTaskViewController: UIViewController {
     @IBOutlet private weak var labLabel: UILabel!
     @IBOutlet private weak var pracLabel: UILabel!
     
-    
-    
     private var presenter: CreateTaskPresenter!
     
     override func viewDidLoad() {
