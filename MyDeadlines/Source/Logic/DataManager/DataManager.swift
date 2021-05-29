@@ -4,6 +4,7 @@ protocol DataManager {
     
     func saveTask(task: TaskModel)
     func getTasks() -> [TaskModel]
+    func onTask(index: Int) -> TaskModel
 }
 
 final class DataManagerImp {
@@ -18,5 +19,9 @@ extension DataManagerImp: DataManager {
     
     func saveTask(task: TaskModel) {
         tasks.append(task)
+    }
+    
+    func onTask(index: Int) -> TaskModel {
+        return tasks[index]
     }
 }

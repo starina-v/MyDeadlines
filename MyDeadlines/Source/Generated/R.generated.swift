@@ -204,12 +204,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `CreateTaskCell`.
     static let createTaskCell = _R.nib._CreateTaskCell()
     /// Nib `PostTableViewCell`.
     static let postTableViewCell = _R.nib._PostTableViewCell()
+    /// Nib `TaskInfoCell`.
+    static let taskInfoCell = _R.nib._TaskInfoCell()
     /// Nib `TasksCell`.
     static let tasksCell = _R.nib._TasksCell()
 
@@ -230,6 +232,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TaskInfoCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.taskInfoCell) instead")
+    static func taskInfoCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.taskInfoCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TasksCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.tasksCell) instead")
     static func tasksCell(_: Void = ()) -> UIKit.UINib {
@@ -243,6 +253,10 @@ struct R: Rswift.Validatable {
 
     static func postTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PostTableViewCell? {
       return R.nib.postTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PostTableViewCell
+    }
+
+    static func taskInfoCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskInfoCell? {
+      return R.nib.taskInfoCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskInfoCell
     }
 
     static func tasksCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TasksCell? {
@@ -291,6 +305,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PostTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PostTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TaskInfoCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TaskInfoCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskInfoCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskInfoCell
       }
 
       fileprivate init() {}

@@ -49,7 +49,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.onTaksInfo()
+        presenter.onTaksInfo(indexPath: indexPath.row)
     }
 }
 

@@ -5,7 +5,7 @@ import SwinjectAutoregistration
 enum Route {
     case main
     case createTask
-    case taskInfo
+    case taskInfo(TaskModel)
     case tasks
 }
 
@@ -46,8 +46,8 @@ extension AppFlow: Flow {
             navigationToMain()
         case .createTask:
             navigationToCreateTask()
-        case .taskInfo:
-            navigationToTaskInfo()
+        case .taskInfo(let task):
+            navigationToTaskInfo(task: task)
         case .tasks:
             navigationToTasks()
         }
@@ -65,8 +65,8 @@ private extension AppFlow {
         tasksRootViewController.pushViewController(createTaskViewController)
     }
     
-    func navigationToTaskInfo() {
-        let taskInfoViewController = resolver ~> TaskInfoViewController.self
+    func navigationToTaskInfo(task: TaskModel) {
+        guard let taskInfoViewController = resolver.resolve(TaskInfoViewController.self, argument: task) else { return }
         tasksRootViewController.pushViewController(taskInfoViewController)
     }
     

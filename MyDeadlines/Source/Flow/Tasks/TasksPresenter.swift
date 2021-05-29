@@ -5,7 +5,7 @@ protocol TasksPresenter {
     var tasks: [TaskModel] { get }
     func addNewTask()
     func getTasks()
-    func onTaksInfo()
+    func onTaksInfo(indexPath: Int)
 }
 
 final class TasksPresenterImp {
@@ -36,7 +36,7 @@ extension TasksPresenterImp: TasksPresenter {
         flow?.navigate(to: .createTask)
     }
     
-    func onTaksInfo() {
-        flow?.navigate(to: .taskInfo)
+    func onTaksInfo(indexPath: Int) {
+        flow?.navigate(to: .taskInfo(dataManager?.onTask(index: indexPath) ?? TaskModel(name: "", labs: [], practical: [])))
     }
 }

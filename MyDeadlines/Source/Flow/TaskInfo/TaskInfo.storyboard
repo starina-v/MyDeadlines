@@ -39,7 +39,19 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEr-3i-5Y0">
                                         <rect key="frame" x="0.0" y="64" width="394" height="754"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3mO-Je-TLH">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="754"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="3mO-Je-TLH" firstAttribute="leading" secondItem="mEr-3i-5Y0" secondAttribute="leading" id="Bhe-jO-bin"/>
+                                            <constraint firstItem="3mO-Je-TLH" firstAttribute="top" secondItem="mEr-3i-5Y0" secondAttribute="top" id="bta-Tw-jKO"/>
+                                            <constraint firstAttribute="bottom" secondItem="3mO-Je-TLH" secondAttribute="bottom" id="m2g-Zk-VcY"/>
+                                            <constraint firstAttribute="trailing" secondItem="3mO-Je-TLH" secondAttribute="trailing" id="ox8-sZ-Ibh"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -53,6 +65,10 @@
                             <constraint firstItem="41p-hZ-fI3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="zg8-aw-e1w"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="dpY-Xu-Zfk" id="8Js-0m-UuJ"/>
+                        <outlet property="tableView" destination="3mO-Je-TLH" id="WVM-9a-Z24"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

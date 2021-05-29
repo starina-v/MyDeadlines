@@ -8,16 +8,16 @@ final class TaskInfoAssembly {}
 extension TaskInfoAssembly: Assembly {
     
     func assemble(container: Container) {
-        container.register(TaskInfoViewController.self) { resolver in
+        container.register(TaskInfoViewController.self) { (resolver, task: TaskModel) in
             let view = R.storyboard.taskInfo.instantiateInitialViewController()!
-            let presenter = resolver.resolve(TaskInfoPresenter.self, argument: view)!
+            let presenter = resolver.resolve(TaskInfoPresenter.self, arguments: view, task)!
             view.inject(presenter: presenter)
             return view
         }
         
-        container.register(TaskInfoPresenter.self) { (resolver, view: TaskInfoViewController) in
+        container.register(TaskInfoPresenter.self) { (resolver, view: TaskInfoViewController, task: TaskModel) in
             let flow = resolver ~> AppFlow.self
-            let presenter = TaskInfoPresenterImp(view: view, flow: flow)
+            let presenter = TaskInfoPresenterImp(view: view, flow: flow, dataManager: resolver~>, task: task)
             return presenter
         }
     }
