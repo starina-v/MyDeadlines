@@ -2,7 +2,6 @@ import UIKit
 
 final class TasksCell: UITableViewCell {
     
-
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var tasksCount: UILabel!
     
@@ -23,7 +22,7 @@ extension TasksCell {
     
     func update(with task: TaskModel) {
         nameLabel.text = task.name
-        tasksCount.text = "total: \(task.labs.count + task.practical.count)"
+        tasksCount.text = "total:  \(task.lessons.count)"
     }
 }
 

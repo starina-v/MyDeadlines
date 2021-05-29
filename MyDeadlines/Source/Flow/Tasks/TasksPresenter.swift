@@ -37,6 +37,6 @@ extension TasksPresenterImp: TasksPresenter {
     }
     
     func onTaksInfo(indexPath: Int) {
-        flow?.navigate(to: .taskInfo(dataManager?.onTask(index: indexPath) ?? TaskModel(name: "", labs: [], practical: [])))
+        flow?.navigate(to: .taskInfo(dataManager?.onTask(index: indexPath) ?? TaskModel(name: "", lessons: [])))
     }
 }

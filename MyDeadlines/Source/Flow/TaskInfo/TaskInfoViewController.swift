@@ -29,13 +29,12 @@ extension TaskInfoViewController: TaskInfoView {
 extension TaskInfoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.task.labs.count + presenter.task.practical.count
+        return presenter.task.lessons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: TaskInfoCell.self)
-        let lessons = presenter.task.labs + presenter.task.practical
-        cell.update(with: lessons[indexPath.row])
+        cell.update(with: presenter.task.lessons[indexPath.row])
         return cell
     }
 }

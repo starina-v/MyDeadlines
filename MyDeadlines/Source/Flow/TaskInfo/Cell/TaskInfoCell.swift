@@ -29,7 +29,7 @@ extension TaskInfoCell {
     
     func update(with task: LessonModel) {
         nameLabel.text = task.name
-        dateLabel.text = "\(task.deadline)"
+        dateLabel.text = formatDate(date: task.deadline)
         flag = task.isFinished
         setCheckBox()
     }
@@ -40,6 +40,13 @@ extension TaskInfoCell {
         } else {
             checkBox.setImage(UIImage(named: "uncheck"), for: .normal)
         }
+    }
+    
+    func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = ("d MMMM")
+        let date = formatter.string(from: date)
+        return date
     }
 }
 
