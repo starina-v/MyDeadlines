@@ -34,6 +34,10 @@ extension TaskInfoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: TaskInfoCell.self)
+        cell.callback = { value in
+            self.presenter.task.lessons[indexPath.row].isFinished = value
+            self.presenter.replace()
+        }
         cell.update(with: presenter.task.lessons[indexPath.row])
         return cell
     }

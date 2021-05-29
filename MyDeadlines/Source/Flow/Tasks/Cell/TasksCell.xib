@@ -94,6 +94,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="nameLabel" destination="PkP-bi-1v1" id="Pvi-fa-PTg"/>
+                <outlet property="progressView" destination="yOn-b1-p2e" id="8rk-VR-XRR"/>
                 <outlet property="tasksCount" destination="9LZ-s1-YgG" id="XPO-aK-a0N"/>
             </connections>
             <point key="canvasLocation" x="-315.21739130434787" y="-2.34375"/>

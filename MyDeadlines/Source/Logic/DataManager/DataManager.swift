@@ -5,6 +5,7 @@ protocol DataManager {
     func saveTask(task: TaskModel)
     func getTasks() -> [TaskModel]
     func onTask(index: Int) -> TaskModel
+    func replaceData(newTask: TaskModel, index: Int)
 }
 
 final class DataManagerImp {
@@ -23,5 +24,9 @@ extension DataManagerImp: DataManager {
     
     func onTask(index: Int) -> TaskModel {
         return tasks[index]
+    }
+    
+    func replaceData(newTask: TaskModel, index: Int) {
+        tasks[index] = newTask
     }
 }

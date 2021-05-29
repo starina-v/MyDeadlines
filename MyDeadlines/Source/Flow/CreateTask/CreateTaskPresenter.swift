@@ -15,7 +15,7 @@ protocol CreateTaskPresenter {
 
 final class CreateTaskPresenterImp {
     
-    var task = TaskModel(name: "", lessons: [])
+    var task = TaskModel(name: "", lessons: [], progress: 0)
     
     var name = ""
     var dates: [Date] = []
@@ -72,7 +72,7 @@ extension CreateTaskPresenterImp: CreateTaskPresenter {
     func updateTask() {
         view?.setName()
         let les = generateItems(labsCount: labsCount, pracCount: pracCount)
-        let taskDetails = TaskModel(name: name, lessons: les)
+        let taskDetails = TaskModel(name: name, lessons: les, progress: 0)
         setTaskDetails(with: taskDetails)
     }
 }

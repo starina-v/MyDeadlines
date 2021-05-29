@@ -4,6 +4,7 @@ final class TasksCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var tasksCount: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +24,8 @@ extension TasksCell {
     func update(with task: TaskModel) {
         nameLabel.text = task.name
         tasksCount.text = "total:  \(task.lessons.count)"
+        //progressView.progress = 0.7
+        //progressView.trackTintColor
     }
 }
 

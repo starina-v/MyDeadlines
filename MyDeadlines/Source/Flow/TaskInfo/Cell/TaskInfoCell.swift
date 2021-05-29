@@ -8,6 +8,8 @@ final class TaskInfoCell: UITableViewCell {
     
     private var flag = false
     
+    var callback : ((Bool) -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -15,13 +17,7 @@ final class TaskInfoCell: UITableViewCell {
     }
     
     @IBAction func checkBoxButton(_ sender: UIButton) {
-        if flag {
-            sender.setImage(UIImage(named:"check.png"), for: .normal)
-            flag = false
-        } else {
-            sender.setImage(UIImage(named:"uncheck.png"), for: .normal)
-            flag = true
-        }
+        setCheckBox()
     }
 }
 
@@ -37,8 +33,12 @@ extension TaskInfoCell {
     func setCheckBox() {
         if flag {
             checkBox.setImage(UIImage(named: "check"), for: .normal)
+            callback?(flag)
+            flag = false
         } else {
             checkBox.setImage(UIImage(named: "uncheck"), for: .normal)
+            callback?(flag)
+            flag = true
         }
     }
     
