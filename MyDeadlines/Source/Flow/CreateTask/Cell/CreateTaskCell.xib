@@ -53,6 +53,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" systemColor="systemTealColor"/>
             <connections>
+                <outlet property="datePicker" destination="VSv-qq-L9v" id="gh4-Z7-rN8"/>
                 <outlet property="taskDeadline" destination="VSv-qq-L9v" id="1Aa-eh-n88"/>
                 <outlet property="taskName" destination="bdK-z9-wLp" id="qU3-8q-Dhv"/>
             </connections>

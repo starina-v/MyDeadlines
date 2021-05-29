@@ -38,9 +38,12 @@
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
-                            <action selector="checkBox:" destination="KWa-41-0tf" eventType="touchUpInside" id="nHI-QV-2ln"/>
+                            <action selector="checkBoxButton:" destination="KWa-41-0tf" eventType="touchUpInside" id="jVx-Mg-Sft"/>
                         </connections>
                     </button>
                 </subviews>
@@ -53,11 +56,17 @@
                     <constraint firstItem="icX-Ky-4f6" firstAttribute="leading" secondItem="JlF-Pa-4o2" secondAttribute="leading" constant="10" id="kl8-kk-EDO"/>
                 </constraints>
             </tableViewCellContentView>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="checkBox" destination="mFp-QE-rSB" id="cyd-XC-ym3"/>
                 <outlet property="dateLabel" destination="PHi-RM-KOt" id="Q3J-ia-Gvn"/>
                 <outlet property="nameLabel" destination="icX-Ky-4f6" id="Jqu-2o-75G"/>
             </connections>
-            <point key="canvasLocation" x="58" y="-3"/>
+            <point key="canvasLocation" x="57.971014492753625" y="-3.3482142857142856"/>
         </tableViewCell>
     </objects>
     <resources>

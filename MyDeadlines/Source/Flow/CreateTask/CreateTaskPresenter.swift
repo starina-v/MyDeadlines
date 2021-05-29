@@ -4,9 +4,9 @@ protocol CreateTaskPresenter {
     
     var task: TaskModel { get }
     var name: String { get set }
+    var dates: [Date] { get set }
     var labsCount: Int { get set }
     var pracCount: Int { get set }
-    var headerTitles: [String] { get }
     func setTaskDetails(with taskModel: TaskModel)
     func saveTask()
     func updateTask()
@@ -18,9 +18,9 @@ final class CreateTaskPresenterImp {
     var task = TaskModel(name: "", labs: [], practical: [])
     
     var name = ""
+    var dates: [Date] = []
     var labsCount = 0
     var pracCount = 0
-    let headerTitles = ["Labs", "Practical"]
     
     private weak var view: CreateTaskView?
     private weak var flow: Flow?
@@ -58,7 +58,8 @@ extension CreateTaskPresenterImp: CreateTaskPresenter {
     func generateItem(count: Int, name: String) -> [LessonModel] {
         var labs: [LessonModel] = []
         for item in 0..<count {
-            labs.append(LessonModel(name: "\(name) \(item+1)", deadline: Date()))
+            dates.append(Date())
+            labs.append(LessonModel(name: "\(name) №\(item+1)", deadline: dates[item], isFinished: false))
         }
         return labs
     }

@@ -34,11 +34,6 @@ private extension ServiceAssembly {
     
     func assembleStorages(container: Container) {
         container.autoregister(DataManager.self, initializer: DataManagerImp.init).inObjectScope(.container)
-        
-//        container.register([TaskModel].self) { _ in
-//            let tasks: [TaskModel] = []
-//            return tasks
-//        }
     }
     
     func assembleOther(container: Container) {

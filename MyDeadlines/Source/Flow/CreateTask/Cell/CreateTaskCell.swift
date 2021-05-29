@@ -2,13 +2,17 @@ import UIKit
 
 final class CreateTaskCell: UITableViewCell {
     
+    var callback : ((UIDatePicker) -> ())?
+    
     @IBOutlet private weak var taskName: UILabel!
     @IBOutlet private weak var taskDeadline: UIDatePicker!
+    @IBOutlet private weak var datePicker: UIDatePicker!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupViewAppearance()
+        datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
     }
     
     override func layoutSubviews() {
@@ -22,6 +26,11 @@ extension CreateTaskCell {
     
     func update(with task: LessonModel) {
         taskName.text = task.name
+        taskDeadline.date = task.deadline
+    }
+    
+    @objc func datePickerChanged(sender: UIDatePicker) {
+       callback?(sender)
     }
 }
 

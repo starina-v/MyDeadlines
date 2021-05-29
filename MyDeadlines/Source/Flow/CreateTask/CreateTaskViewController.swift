@@ -77,6 +77,9 @@ extension CreateTaskViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: CreateTaskCell.self)
         let lessons = (presenter.task.labs + presenter.task.practical)
+        cell.callback = { datePicker in
+            self.presenter.dates[indexPath.row] = (datePicker.date)
+        }
         cell.update(with: lessons[indexPath.row])
         return cell
     }
@@ -102,3 +105,8 @@ private extension CreateTaskViewController {
         pracLabel.text = "Practical quantity: \(presenter.pracCount)"
     }
 }
+
+
+//let formatter = DateFormatter()
+//formatter.dateFormat = ("d MMMM")
+//let date = formatter.string(from: datePicker.date)
