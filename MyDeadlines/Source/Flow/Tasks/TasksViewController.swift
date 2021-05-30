@@ -70,9 +70,10 @@ private extension TasksViewController {
         navigationItem.title = "Tasks"
         let rightButton = UIBarButtonItem(
             title: "Add",
-            style: .plain,
+            style: .done,
             target: self,
             action: #selector(createNewTask(_:)))
+        rightButton.tintColor = .white
         self.navigationItem.setRightBarButton(rightButton, animated: true)
     }
     
@@ -80,6 +81,7 @@ private extension TasksViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.backgroundColor = .clear
         tableView.register(nibWithCellClass: TasksCell.self)
     }
     

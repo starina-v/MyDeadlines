@@ -85,6 +85,7 @@ private extension CreateTaskViewController {
     
     func setupViewAppearance() {
         navigationItem.title = "Create new task"
+        self.navigationController?.navigationBar.tintColor = .white
         
         tableView.delegate = self
         tableView.dataSource = self

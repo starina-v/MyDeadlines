@@ -5,6 +5,7 @@ final class TasksCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var tasksCount: UILabel!
     @IBOutlet private weak var progressView: UIProgressView!
+    @IBOutlet private weak var shadowView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +20,7 @@ extension TasksCell {
         nameLabel.text = task.name
         tasksCount.text = "total:  \(task.lessons.count)"
         getProgres(task: task)
+        setupViewAppearance()
     }
     
     func getProgres(task: TaskModel) {
@@ -57,5 +59,11 @@ private extension TasksCell {
     
     func setupViewAppearance() {
         selectedBackgroundView = UIView()
+        
+        shadowView.layer.cornerRadius = 10
+        shadowView.layer.shadowColor = UIColor.gray.cgColor
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowOffset = .init(width: 1, height: 1)
+        shadowView.layer.shadowRadius = 4
     }
 }

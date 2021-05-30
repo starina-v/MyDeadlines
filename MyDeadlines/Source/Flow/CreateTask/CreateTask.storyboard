@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,7 +30,8 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="0b9-43-NKY"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="title"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfr-qJ-YB9">
@@ -39,7 +40,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="bG9-3s-GDu"/>
                                                         </constraints>
-                                                        <state key="normal" title="Create"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="Create">
+                                                            <color key="titleColor" name="title"/>
+                                                        </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="10"/>
@@ -60,7 +64,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="backgroundColor" name="primary"/>
                                         <constraints>
                                             <constraint firstItem="KbC-ln-KgT" firstAttribute="top" secondItem="D7t-tp-rxl" secondAttribute="top" constant="10" id="FbT-bE-8AD"/>
                                             <constraint firstAttribute="bottom" secondItem="KbC-ln-KgT" secondAttribute="bottom" constant="10" id="LoK-vZ-BB8"/>
@@ -89,8 +93,8 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="32" id="VVh-z6-LbZ"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <color key="textColor" name="title"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -124,8 +128,8 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="32" id="gQM-IP-7xj"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <color key="textColor" name="title"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -151,9 +155,10 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="tintColor" name="title"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="backgroundColor" name="primary"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="gPt-Am-ZJ3" secondAttribute="trailing" constant="10" id="ImA-7l-y3W"/>
                                             <constraint firstItem="gPt-Am-ZJ3" firstAttribute="top" secondItem="wFM-0X-iQC" secondAttribute="top" constant="10" id="q8r-bv-YRn"/>
@@ -168,7 +173,7 @@
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-Sb-m1N">
                                         <rect key="frame" x="0.0" y="168" width="394" height="630"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="backgroundColor" name="primary"/>
                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -211,8 +216,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="primary">
+            <color red="0.18700000643730164" green="0.39100000262260437" blue="0.79900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="title">
+            <color red="0.0" green="0.27300000190734863" blue="0.37099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
