@@ -4,18 +4,12 @@ final class TasksCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var tasksCount: UILabel!
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet private weak var progressView: UIProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupViewAppearance()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        contentView.frame = contentView.frame.inset(by: .init(top: 10, left: 10, bottom: 0, right: 10))
     }
 }
 
@@ -35,7 +29,13 @@ extension TasksCell {
                 finished += 1
             }
         }
-        let formula: Float = (Float((100/total) * finished) / 100)
+        var formula: Float = 0.0
+        
+        if finished == total {
+            formula = 1.0
+        } else {
+            formula = (Float((100/total) * finished) / 100)
+        }
         progressView.progress = formula
         setColor(progress: formula)
     }

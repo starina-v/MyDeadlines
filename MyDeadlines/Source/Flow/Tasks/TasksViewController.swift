@@ -39,6 +39,11 @@ extension TasksViewController: TasksView {
 extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if presenter.tasks.count == 0 {
+            setEmptyView()
+        } else {
+            self.tableView.backgroundView = nil
+        }
         return presenter.tasks.count
     }
     
@@ -80,5 +85,13 @@ private extension TasksViewController {
     
     @objc func createNewTask(_ sender: UIBarButtonItem) {
         presenter.addNewTask()
+    }
+    
+    func setEmptyView() {
+        let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        emptyLabel.text = "No Data"
+        emptyLabel.backgroundColor = .white
+        emptyLabel.textAlignment = NSTextAlignment.center
+        self.tableView.backgroundView = emptyLabel
     }
 }
