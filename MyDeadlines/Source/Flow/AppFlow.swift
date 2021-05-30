@@ -1,12 +1,14 @@
 import UIKit
 import Swinject
 import SwinjectAutoregistration
+import SafariServices
 
 enum Route {
     case main
     case createTask
     case taskInfo(TaskModel, Int)
     case tasks
+    case safari(String)
 }
 
 protocol Flow: AnyObject {
@@ -50,6 +52,8 @@ extension AppFlow: Flow {
             navigationToTaskInfo(task: task, index: index)
         case .tasks:
             navigationToTasks()
+        case .safari(let link):
+            navigationToSafari(with: link)
         }
     }
 }
@@ -73,12 +77,36 @@ private extension AppFlow {
     func navigationToTasks() {
         tasksRootViewController.popViewController()
     }
+    
+    func navigationToSafari(with link: String) {
+        if let url = URL(string: link) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = false
+
+            let safari = SFSafariViewController(url: url, configuration: config)
+            safari.preferredBarTintColor = R.color.primary()
+            safari.preferredControlTintColor = .white
+
+            rootViewController.present(safari, animated: true)
+        }
+    }
 }
 
 // MARK: - Appearance
 private extension AppFlow {
 
-    func setupGlobalAppearance() {
+    func setupGlobalAppearance() {        
+        rootViewController.tabBar.isTranslucent = false
+        rootViewController.tabBar.updateColors(
+            with: .init(
+                background: R.color.primary(),
+                selectedBackground: nil,
+                item: .lightGray,
+                selectedItem: .white))
+        
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = R.color.primary()
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
     }
 }
 
@@ -94,12 +122,12 @@ private extension AppFlow {
         
         let tasksTabBarItem = UITabBarItem(
             title: "Tasks",
-            image: .add,
+            image: R.image.list(),
             selectedImage: nil)
 
         let newsTabBarItem = UITabBarItem(
             title: "News",
-            image: .strokedCheckmark,
+            image: R.image.news(),
             selectedImage: nil)
         
         tasksViewController.tabBarItem = tasksTabBarItem

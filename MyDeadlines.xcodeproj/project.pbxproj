@@ -22,6 +22,7 @@
 		624FC10726348BF3001377AB /* MyDeadlines.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 624FC10526348BF3001377AB /* MyDeadlines.xcdatamodeld */; };
 		624FC10926348BF5001377AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624FC10826348BF5001377AB /* Assets.xcassets */; };
 		624FC12F26348EF1001377AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624FC12E26348EF0001377AB /* LaunchScreen.storyboard */; };
+		627D6D1A2661236800D75E3A /* UITabBar+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627D6D192661236800D75E3A /* UITabBar+Utils.swift */; };
 		62E15A9926383025000060CB /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15A9826383025000060CB /* ApiClient.swift */; };
 		62E15AA626383076000060CB /* ApiAuxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15AA526383076000060CB /* ApiAuxiliary.swift */; };
 		62E15AA926383109000060CB /* Codable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15AA826383109000060CB /* Codable+Utils.swift */; };
@@ -67,6 +68,7 @@
 		624FC10826348BF5001377AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		624FC10D26348BF5001377AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		624FC12E26348EF0001377AB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		627D6D192661236800D75E3A /* UITabBar+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Utils.swift"; sourceTree = "<group>"; };
 		62E15A9826383025000060CB /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		62E15AA526383076000060CB /* ApiAuxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAuxiliary.swift; sourceTree = "<group>"; };
 		62E15AA826383109000060CB /* Codable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Utils.swift"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				62E15AA826383109000060CB /* Codable+Utils.swift */,
+				627D6D192661236800D75E3A /* UITabBar+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				C97407E5265EDD5B00BE63C2 /* CreateTaskAssembly.swift in Sources */,
 				6222B44826385AAB00ED0250 /* SceneDelegate.swift in Sources */,
 				C9CB200C264AF5AC00284FFA /* TasksPresenter.swift in Sources */,
+				627D6D1A2661236800D75E3A /* UITabBar+Utils.swift in Sources */,
 				624FC0FD26348BF3001377AB /* AppDelegate.swift in Sources */,
 				62324EC7263494210064D0B9 /* ServiceAssembly.swift in Sources */,
 				C98364912649E37F0067D130 /* TaskModel.swift in Sources */,

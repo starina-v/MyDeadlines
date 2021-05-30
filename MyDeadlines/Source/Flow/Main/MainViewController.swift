@@ -1,13 +1,5 @@
-//
-//  ViewController.swift
-//  MyDeadlines
-//
-//  Created by Vlad Starina on 24.04.2021.
-//
-
 import UIKit
 import SwifterSwift
-import SafariServices
 
 protocol MainView: AnyObject {
 
@@ -36,6 +28,7 @@ class MainViewController: UIViewController {
 extension MainViewController: MainView {
     
     func update() {
+        tableView?.tableFooterView?.isHidden = true
         tableView?.reloadData()
     }
 }
@@ -55,14 +48,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post = presenter.posts[indexPath.row]
-        if let url = URL(string: post.link) {
-            let config = SFSafariViewController.Configuration()
-            config.entersReaderIfAvailable = false
-            
-            let vc = SFSafariViewController(url: url, configuration: config)
-            present(vc, animated: true)
-        }
+        presenter.didSelectRowAt(indexPath: indexPath)
     }
 }
 
@@ -75,7 +61,24 @@ private extension MainViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.register(nibWithCellClass: PostTableViewCell.self)
+        tableView.separatorStyle = .none
+        
+        setupTableViewActivityIndicator()
         
         title = "News"
+    }
+    
+    func setupTableViewActivityIndicator() {
+        guard let width = tableView?.bounds.width else { return }
+
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.startAnimating()
+        spinner.frame = CGRect(
+            x: CGFloat(0),
+            y: CGFloat(0),
+            width: width,
+            height: CGFloat(44))
+
+        self.tableView?.tableFooterView = spinner
     }
 }
