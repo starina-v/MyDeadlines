@@ -51,7 +51,9 @@ extension CreateTaskPresenterImp: CreateTaskPresenter {
         } else if labsCount == 0, pracCount == 0 {
             view?.showAlert(title: "Please, enter labs or practical quantity", message: "")
         } else {
-            saveTask()
+            if nameIsExclusive(nameField: task.name) {
+                saveTask()
+            }
         }
     }
     
@@ -74,5 +76,16 @@ extension CreateTaskPresenterImp: CreateTaskPresenter {
         let les = generateItems(labsCount: labsCount, pracCount: pracCount)
         let taskDetails = TaskModel(name: name, lessons: les, progress: 0)
         setTaskDetails(with: taskDetails)
+    }
+    
+    func nameIsExclusive(nameField: String) -> Bool {
+        let tasks = dataManager?.getTasks() ?? []
+        for i in 0..<tasks.count {
+            if tasks[i].name == nameField {
+                view?.showAlert(title: "Please, enter correct task name", message: "This name is already used")
+                return false
+            }
+        }
+        return true
     }
 }

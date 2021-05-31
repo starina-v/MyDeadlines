@@ -54,7 +54,6 @@
             <color key="backgroundColor" name="primary"/>
             <connections>
                 <outlet property="datePicker" destination="VSv-qq-L9v" id="gh4-Z7-rN8"/>
-                <outlet property="taskDeadline" destination="VSv-qq-L9v" id="1Aa-eh-n88"/>
                 <outlet property="taskName" destination="bdK-z9-wLp" id="qU3-8q-Dhv"/>
             </connections>
             <point key="canvasLocation" x="78.260869565217391" y="60.267857142857139"/>
