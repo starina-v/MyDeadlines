@@ -12,37 +12,56 @@ protocol DataManager {
 }
 
 final class DataManagerImp {
-    private var tasks: [TaskModel] = []
+    
+    private var tasks: [TaskModel]
+    
+    private let userDataService: UserDataService
+    
+    init(userDataService: UserDataService) {
+        self.userDataService = userDataService
+        
+        tasks = userDataService.tasks
+    }
 }
 
 extension DataManagerImp: DataManager {
     
     func getTasks() -> [TaskModel] {
-        return tasks
+        tasks
     }
     
     func getOneTask(index: Int) -> TaskModel {
-        return tasks[index]
+        tasks[index]
     }
     
     func onTask(index: Int) -> TaskModel {
-        return tasks[index]
+        tasks[index]
     }
     
     func saveTask(task: TaskModel) {
         tasks.append(task)
+        save()
     }
     
     func removeTask(index: Int) {
         tasks.remove(at: index)
+        save()
     }
     
     func removeLesson(taskIndex: Int, lessonIndex: Int) {
         tasks[taskIndex].lessons.remove(at: lessonIndex)
-        print(tasks[taskIndex].lessons.count)
+        save()
     }
 
     func replaceTask(newTask: TaskModel, index: Int) {
         tasks[index] = newTask
+        save()
+    }
+}
+
+private extension DataManagerImp {
+    
+    func save() {
+        userDataService.tasks = tasks
     }
 }

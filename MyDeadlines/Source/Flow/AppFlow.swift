@@ -4,11 +4,11 @@ import SwinjectAutoregistration
 import SafariServices
 
 enum Route {
-    case main
     case createTask
     case taskInfo(TaskModel, Int)
     case tasks
     case safari(String)
+    case info
 }
 
 protocol Flow: AnyObject {
@@ -44,8 +44,6 @@ extension AppFlow: Flow {
 
     func navigate(to step: Route) {
         switch step {
-        case .main:
-            navigationToMain()
         case .createTask:
             navigationToCreateTask()
         case .taskInfo(let task, let index):
@@ -54,15 +52,14 @@ extension AppFlow: Flow {
             navigationToTasks()
         case .safari(let link):
             navigationToSafari(with: link)
+        case .info:
+            navigationToInfo()
         }
     }
 }
 
 // MARK: - Navigate
 private extension AppFlow {
-
-    func navigationToMain() {
-    }
     
     func navigationToCreateTask() {
         let createTaskViewController = resolver ~> CreateTaskViewController.self
@@ -78,6 +75,11 @@ private extension AppFlow {
         tasksRootViewController.popViewController()
     }
     
+    func navigationToInfo() {
+        let infoViewController = resolver ~> InfoViewController.self
+        newsRootViewController.pushViewController(infoViewController)
+    }
+
     func navigationToSafari(with link: String) {
         if let url = URL(string: link) {
             let config = SFSafariViewController.Configuration()
@@ -105,6 +107,7 @@ private extension AppFlow {
                 selectedItem: .white))
         
         UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barTintColor = R.color.primary()
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
     }
@@ -115,7 +118,7 @@ private extension AppFlow {
 
     func setupRootViewController() {
         let tasksViewController = resolver ~> TasksViewController.self
-        let newsViewController = resolver ~> MainViewController.self
+        let newsViewController = resolver ~> NewsViewController.self
 
         tasksRootViewController.setViewControllers([tasksViewController], animated: false)
         newsRootViewController.setViewControllers([newsViewController], animated: false)

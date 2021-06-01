@@ -33,7 +33,12 @@ private extension ServiceAssembly {
     }
     
     func assembleStorages(container: Container) {
-        container.autoregister(DataManager.self, initializer: DataManagerImp.init).inObjectScope(.container)
+        container.autoregister(UserDefaultsService.self, initializer: UserDefaultsServiceImp.init)
+            .inObjectScope(.container)
+        container.autoregister(UserDataService.self, initializer: UserDataServiceImp.init)
+            .inObjectScope(.container)
+        container.autoregister(DataManager.self, initializer: DataManagerImp.init)
+            .inObjectScope(.container)
     }
     
     func assembleOther(container: Container) {

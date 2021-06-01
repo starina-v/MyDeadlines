@@ -1,41 +1,40 @@
 import UIKit
 import SwifterSwift
 
-protocol MainView: AnyObject {
+protocol NewsView: AnyObject {
 
     func update()
 }
 
-class MainViewController: UIViewController {
+final class NewsViewController: UIViewController {
 
-    private var presenter: MainPresenter!
+    private var presenter: NewsPresenter!
 
     @IBOutlet private weak var tableView: UITableView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewAppearance()
     }
     
-    func inject(presenter: MainPresenter) {
+    func inject(presenter: NewsPresenter) {
         self.presenter = presenter
     }
 }
 
-// MARK: - MainView
+// MARK: - NewsView
 
-extension MainViewController: MainView {
+extension NewsViewController: NewsView {
     
     func update() {
-        tableView?.tableFooterView?.isHidden = true
         tableView?.reloadData()
     }
 }
 
 // MARK: - MainView
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.posts.count
@@ -54,31 +53,32 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - private
 
-private extension MainViewController {
+private extension NewsViewController {
     
     func setupViewAppearance() {
+        title = "News"
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.register(nibWithCellClass: PostTableViewCell.self)
         tableView.separatorStyle = .none
         
-        setupTableViewActivityIndicator()
-        
-        title = "News"
+        let switchButton = UIBarButtonItem(
+            image: UIImage(systemName: "info.circle.fill"),
+            style: .done,
+            target: self,
+            action: #selector(infoTapped))
+        navigationItem.rightBarButtonItem = switchButton
+
     }
-    
-    func setupTableViewActivityIndicator() {
-        guard let width = tableView?.bounds.width else { return }
+}
 
-        let spinner = UIActivityIndicatorView(style: .medium)
-        spinner.startAnimating()
-        spinner.frame = CGRect(
-            x: CGFloat(0),
-            y: CGFloat(0),
-            width: width,
-            height: CGFloat(44))
+// MARK: - Actions
 
-        self.tableView?.tableFooterView = spinner
+extension NewsViewController {
+
+    @objc func infoTapped(sender: UIBarButtonItem) {
+        presenter.infoTapped()
     }
 }

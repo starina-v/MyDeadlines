@@ -89,14 +89,16 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     /// Storyboard `CreateTask`.
     static let createTask = _R.storyboard.createTask()
+    /// Storyboard `Info`.
+    static let info = _R.storyboard.info()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
+    /// Storyboard `News`.
+    static let news = _R.storyboard.news()
     /// Storyboard `TaskInfo`.
     static let taskInfo = _R.storyboard.taskInfo()
     /// Storyboard `Tasks`.
@@ -110,6 +112,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Info", bundle: ...)`
+    static func info(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.info)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
@@ -117,9 +126,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    /// `UIStoryboard(name: "News", bundle: ...)`
+    static func news(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.news)
     }
     #endif
 
@@ -202,7 +211,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `apotLogo`.
     static let apotLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "apotLogo")
@@ -210,12 +219,16 @@ struct R: Rswift.Validatable {
     static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
     /// Image `check`.
     static let check = Rswift.ImageResource(bundle: R.hostingBundle, name: "check")
+    /// Image `facebook`.
+    static let facebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "facebook")
     /// Image `list`.
     static let list = Rswift.ImageResource(bundle: R.hostingBundle, name: "list")
     /// Image `news`.
     static let news = Rswift.ImageResource(bundle: R.hostingBundle, name: "news")
-    /// Image `nureLogo`.
-    static let nureLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "nureLogo")
+    /// Image `safari`.
+    static let safari = Rswift.ImageResource(bundle: R.hostingBundle, name: "safari")
+    /// Image `telegram`.
+    static let telegram = Rswift.ImageResource(bundle: R.hostingBundle, name: "telegram")
     /// Image `uncheck`.
     static let uncheck = Rswift.ImageResource(bundle: R.hostingBundle, name: "uncheck")
 
@@ -241,6 +254,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "facebook", bundle: ..., traitCollection: ...)`
+    static func facebook(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.facebook, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "list", bundle: ..., traitCollection: ...)`
     static func list(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.list, compatibleWith: traitCollection)
@@ -255,9 +275,16 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "nureLogo", bundle: ..., traitCollection: ...)`
-    static func nureLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.nureLogo, compatibleWith: traitCollection)
+    /// `UIImage(named: "safari", bundle: ..., traitCollection: ...)`
+    static func safari(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.safari, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "telegram", bundle: ..., traitCollection: ...)`
+    static func telegram(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.telegram, compatibleWith: traitCollection)
     }
     #endif
 
@@ -285,7 +312,7 @@ struct R: Rswift.Validatable {
             static let _key = "Default Configuration"
             static let uiSceneConfigurationName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneConfigurationName") ?? "Default Configuration"
             static let uiSceneDelegateClassName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate"
-            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "Main"
+            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "News"
 
             fileprivate init() {}
           }
@@ -455,10 +482,13 @@ struct _R: Rswift.Validatable {
       try createTask.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try info.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try main.validate()
+      try news.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try taskInfo.validate()
@@ -487,6 +517,34 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct info: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = InfoViewController
+
+      let bundle = R.hostingBundle
+      let infoViewController = StoryboardViewControllerResource<InfoViewController>(identifier: "InfoViewController")
+      let name = "Info"
+
+      func infoViewController(_: Void = ()) -> InfoViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: infoViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "facebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'facebook' is used in storyboard 'Info', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "safari", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'safari' is used in storyboard 'Info', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "telegram", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'telegram' is used in storyboard 'Info', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'Info', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in storyboard 'Info', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'title' is used in storyboard 'Info', but couldn't be loaded.") }
+        }
+        if _R.storyboard.info().infoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'infoViewController' could not be loaded from storyboard 'Info' as 'InfoViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
 
@@ -503,15 +561,15 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = MainViewController
+    struct news: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = NewsViewController
 
       let bundle = R.hostingBundle
-      let name = "Main"
+      let name = "News"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'Main', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'News', but couldn't be loaded.") }
         }
       }
 

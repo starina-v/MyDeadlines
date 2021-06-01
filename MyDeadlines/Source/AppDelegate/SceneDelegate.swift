@@ -24,7 +24,8 @@ private extension SceneDelegate {
         
         let modulesAssembler = Assembler(
             [
-                MainAssembly(),
+                NewsAssembly(),
+                InfoAssembly(),
                 TasksAssembly(),
                 CreateTaskAssembly(),
                 TaskInfoAssembly()
@@ -42,6 +43,5 @@ private extension SceneDelegate {
         
         self.window?.rootViewController = appFlow.root
         self.window?.makeKeyAndVisible()
-        
     }
 }

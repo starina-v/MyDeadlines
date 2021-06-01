@@ -1,6 +1,6 @@
 import Foundation
 
-struct TaskModel {
+struct TaskModel: Codable {
     let name: String
     var lessons: [LessonModel]
     let progress: Float

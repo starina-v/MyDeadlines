@@ -2,26 +2,39 @@
 import Foundation
 import RxSwift
 
-protocol MainPresenter {
-    
+protocol NewsPresenter {
+
     var posts: [Post] { get }
     
+    var isLoading: Bool { get }
+
     func didSelectRowAt(indexPath: IndexPath)
+    
+    func infoTapped()
 }
 
-final class MainPresenterImp {
+final class NewsPresenterImp {
     
-    var posts: [Post] = []
+    struct State {
+        var posts: [Post]
+        var isLoading: Bool
+    }
+        
+    var state: State
     
     private let apiClient: ApiClient
     private let disposeBag = DisposeBag()
 
-    private weak var view: MainView?
+    private weak var flow: Flow?
+    private weak var view: NewsView?
 
-    init(view: MainView, apiClient: ApiClient) {
+    init(view: NewsView, flow: Flow, apiClient: ApiClient) {
         self.view = view
+        self.flow = flow
         self.apiClient = apiClient
         
+        state = .init(posts: [], isLoading: true)
+
         getPosts()
     }
     
@@ -30,7 +43,7 @@ final class MainPresenterImp {
             .request(PostsApi.get)
             .subscribe(
                 onSuccess: { [weak self] (response: PostsResponse) in
-                    self?.posts = response.posts
+                    self?.state.posts = response.posts
                         .filter({ !$0.link.contains("/ru/")})
                         .filter({ !$0.link.contains("/en/")})
                         .map({
@@ -56,19 +69,34 @@ final class MainPresenterImp {
                                 link: $0.link,
                                 title: $0.title)
                         })
+                    self?.state.isLoading = false
                     self?.view?.update()
                 },
-                onError: {
+                onError: { [weak self] in
+                    self?.state.isLoading = false
+                    self?.view?.update()
                     print($0)
                 })
                 .disposed(by: disposeBag)
     }
 }
 
-//MARK: - MainPresenter
-extension MainPresenterImp: MainPresenter {
+//MARK: - NewsPresenter
+extension NewsPresenterImp: NewsPresenter {
+    
+    var posts: [Post] {
+        state.posts
+    }
+    
+    var isLoading: Bool {
+        state.isLoading
+    }
     
     func didSelectRowAt(indexPath: IndexPath) {
-        posts[indexPath.row].link
+        flow?.navigate(to: .safari(state.posts[indexPath.row].link))
+    }
+    
+    func infoTapped() {
+        flow?.navigate(to: .info)
     }
 }

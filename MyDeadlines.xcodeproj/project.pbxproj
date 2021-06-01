@@ -13,16 +13,21 @@
 		62324EBE263490480064D0B9 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EBD263490480064D0B9 /* AppFlow.swift */; };
 		62324EC22634940C0064D0B9 /* FlowAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EC12634940C0064D0B9 /* FlowAssembly.swift */; };
 		62324EC7263494210064D0B9 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EC6263494210064D0B9 /* ServiceAssembly.swift */; };
-		62324ECA263495190064D0B9 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EC9263495190064D0B9 /* MainAssembly.swift */; };
+		62324ECA263495190064D0B9 /* NewsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EC9263495190064D0B9 /* NewsAssembly.swift */; };
 		62324EE42634991D0064D0B9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EE32634991C0064D0B9 /* R.generated.swift */; };
-		62324EE82634996B0064D0B9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EE72634996B0064D0B9 /* MainPresenter.swift */; };
+		62324EE82634996B0064D0B9 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62324EE72634996B0064D0B9 /* NewsPresenter.swift */; };
 		624FC0FD26348BF3001377AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FC0FC26348BF3001377AB /* AppDelegate.swift */; };
-		624FC10126348BF3001377AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FC10026348BF3001377AB /* MainViewController.swift */; };
-		624FC10426348BF3001377AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624FC10226348BF3001377AB /* Main.storyboard */; };
-		624FC10726348BF3001377AB /* MyDeadlines.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 624FC10526348BF3001377AB /* MyDeadlines.xcdatamodeld */; };
+		624FC10126348BF3001377AB /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FC10026348BF3001377AB /* NewsViewController.swift */; };
+		624FC10426348BF3001377AB /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624FC10226348BF3001377AB /* News.storyboard */; };
 		624FC10926348BF5001377AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624FC10826348BF5001377AB /* Assets.xcassets */; };
 		624FC12F26348EF1001377AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624FC12E26348EF0001377AB /* LaunchScreen.storyboard */; };
 		627D6D1A2661236800D75E3A /* UITabBar+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627D6D192661236800D75E3A /* UITabBar+Utils.swift */; };
+		6284CD2026663EFF00EC07DA /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6284CD1F26663EFF00EC07DA /* UserDefaultsService.swift */; };
+		6284CD2226663F3900EC07DA /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6284CD2126663F3900EC07DA /* UserDataService.swift */; };
+		6284CD252666461400EC07DA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6284CD242666461400EC07DA /* InfoViewController.swift */; };
+		6284CD282666469A00EC07DA /* InfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6284CD272666469A00EC07DA /* InfoPresenter.swift */; };
+		6284CD2A266647CC00EC07DA /* InfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6284CD29266647CC00EC07DA /* InfoAssembly.swift */; };
+		6284CD2C2666487500EC07DA /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6284CD2B2666487500EC07DA /* Info.storyboard */; };
 		62E15A9926383025000060CB /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15A9826383025000060CB /* ApiClient.swift */; };
 		62E15AA626383076000060CB /* ApiAuxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15AA526383076000060CB /* ApiAuxiliary.swift */; };
 		62E15AA926383109000060CB /* Codable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15AA826383109000060CB /* Codable+Utils.swift */; };
@@ -57,18 +62,23 @@
 		62324EBD263490480064D0B9 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		62324EC12634940C0064D0B9 /* FlowAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAssembly.swift; sourceTree = "<group>"; };
 		62324EC6263494210064D0B9 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
-		62324EC9263495190064D0B9 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		62324EC9263495190064D0B9 /* NewsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAssembly.swift; sourceTree = "<group>"; };
 		62324EE32634991C0064D0B9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		62324EE72634996B0064D0B9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		62324EE72634996B0064D0B9 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
 		624FC0F926348BF3001377AB /* MyDeadlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDeadlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624FC0FC26348BF3001377AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		624FC10026348BF3001377AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		624FC10326348BF3001377AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		624FC10626348BF3001377AB /* MyDeadlines.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyDeadlines.xcdatamodel; sourceTree = "<group>"; };
+		624FC10026348BF3001377AB /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		624FC10326348BF3001377AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/News.storyboard; sourceTree = "<group>"; };
 		624FC10826348BF5001377AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		624FC10D26348BF5001377AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		624FC12E26348EF0001377AB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		627D6D192661236800D75E3A /* UITabBar+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Utils.swift"; sourceTree = "<group>"; };
+		6284CD1F26663EFF00EC07DA /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		6284CD2126663F3900EC07DA /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		6284CD242666461400EC07DA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		6284CD272666469A00EC07DA /* InfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPresenter.swift; sourceTree = "<group>"; };
+		6284CD29266647CC00EC07DA /* InfoAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAssembly.swift; sourceTree = "<group>"; };
+		6284CD2B2666487500EC07DA /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		62E15A9826383025000060CB /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		62E15AA526383076000060CB /* ApiAuxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAuxiliary.swift; sourceTree = "<group>"; };
 		62E15AA826383109000060CB /* Codable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Utils.swift"; sourceTree = "<group>"; };
@@ -214,7 +224,8 @@
 				C9CB2008264AF54100284FFA /* Tasks */,
 				C97407DF265EDCEE00BE63C2 /* CreateTask */,
 				C93EF10D265FD3F80002A84F /* TaskInfo */,
-				624FC12C26348E24001377AB /* Main */,
+				624FC12C26348E24001377AB /* News */,
+				6284CD262666468D00EC07DA /* Info */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -223,18 +234,10 @@
 			isa = PBXGroup;
 			children = (
 				C9D0C35926605F6E002BCC76 /* DataManager */,
-				624FC12726348DE8001377AB /* CoreData */,
+				6284CD2326663FDF00EC07DA /* Storages */,
 				62E15AAD263831B1000060CB /* Networking */,
 			);
 			path = Logic;
-			sourceTree = "<group>";
-		};
-		624FC12726348DE8001377AB /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				624FC10526348BF3001377AB /* MyDeadlines.xcdatamodeld */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		624FC12826348E0B001377AB /* Launch */ = {
@@ -245,16 +248,36 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		624FC12C26348E24001377AB /* Main */ = {
+		624FC12C26348E24001377AB /* News */ = {
 			isa = PBXGroup;
 			children = (
 				62E15AEA263852E0000060CB /* Views */,
-				624FC10026348BF3001377AB /* MainViewController.swift */,
-				62324EE72634996B0064D0B9 /* MainPresenter.swift */,
-				62324EC9263495190064D0B9 /* MainAssembly.swift */,
-				624FC10226348BF3001377AB /* Main.storyboard */,
+				624FC10026348BF3001377AB /* NewsViewController.swift */,
+				62324EE72634996B0064D0B9 /* NewsPresenter.swift */,
+				62324EC9263495190064D0B9 /* NewsAssembly.swift */,
+				624FC10226348BF3001377AB /* News.storyboard */,
 			);
-			path = Main;
+			path = News;
+			sourceTree = "<group>";
+		};
+		6284CD2326663FDF00EC07DA /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				6284CD2126663F3900EC07DA /* UserDataService.swift */,
+				6284CD1F26663EFF00EC07DA /* UserDefaultsService.swift */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		6284CD262666468D00EC07DA /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				6284CD242666461400EC07DA /* InfoViewController.swift */,
+				6284CD272666469A00EC07DA /* InfoPresenter.swift */,
+				6284CD29266647CC00EC07DA /* InfoAssembly.swift */,
+				6284CD2B2666487500EC07DA /* Info.storyboard */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		62E15AAB26383112000060CB /* Extensions */ = {
@@ -459,13 +482,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6284CD2C2666487500EC07DA /* Info.storyboard in Resources */,
 				C91267922661B3F000928A8D /* TaskInfoCell.xib in Resources */,
 				624FC12F26348EF1001377AB /* LaunchScreen.storyboard in Resources */,
 				C912678D2661A13500928A8D /* TasksCell.xib in Resources */,
 				624FC10926348BF5001377AB /* Assets.xcassets in Resources */,
 				C97407E7265EDD6A00BE63C2 /* CreateTask.storyboard in Resources */,
 				C97407EC265EF0EB00BE63C2 /* CreateTaskCell.xib in Resources */,
-				624FC10426348BF3001377AB /* Main.storyboard in Resources */,
+				624FC10426348BF3001377AB /* News.storyboard in Resources */,
 				62E15AE6263852B1000060CB /* PostTableViewCell.xib in Resources */,
 				C9CB2010264AF64900284FFA /* Tasks.storyboard in Resources */,
 				C93EF115265FD43E0002A84F /* TaskInfo.storyboard in Resources */,
@@ -543,48 +567,52 @@
 			files = (
 				C9CB200E264AF5FF00284FFA /* TasksAssembly.swift in Sources */,
 				C9D0C358265FF717002BCC76 /* DataManager.swift in Sources */,
+				6284CD282666469A00EC07DA /* InfoPresenter.swift in Sources */,
 				62E15AA926383109000060CB /* Codable+Utils.swift in Sources */,
 				62E15AB526383902000060CB /* PostsApi.swift in Sources */,
 				62E15A9926383025000060CB /* ApiClient.swift in Sources */,
 				C93EF10F265FD41B0002A84F /* TaskInfoViewController.swift in Sources */,
 				C9CB200A264AF57800284FFA /* TasksViewController.swift in Sources */,
 				C9CB2007264AF52A00284FFA /* LessonModel.swift in Sources */,
+				6284CD252666461400EC07DA /* InfoViewController.swift in Sources */,
 				C93EF10A265FC68E0002A84F /* TasksCell.swift in Sources */,
-				624FC10126348BF3001377AB /* MainViewController.swift in Sources */,
+				624FC10126348BF3001377AB /* NewsViewController.swift in Sources */,
 				C91267902661B3E200928A8D /* TaskInfoCell.swift in Sources */,
 				62324EC22634940C0064D0B9 /* FlowAssembly.swift in Sources */,
+				6284CD2226663F3900EC07DA /* UserDataService.swift in Sources */,
+				6284CD2026663EFF00EC07DA /* UserDefaultsService.swift in Sources */,
 				62E15AA626383076000060CB /* ApiAuxiliary.swift in Sources */,
 				62324EE42634991D0064D0B9 /* R.generated.swift in Sources */,
 				C93EF113265FD4330002A84F /* TaskInfoAssembly.swift in Sources */,
 				C97407E5265EDD5B00BE63C2 /* CreateTaskAssembly.swift in Sources */,
 				6222B44826385AAB00ED0250 /* SceneDelegate.swift in Sources */,
 				C9CB200C264AF5AC00284FFA /* TasksPresenter.swift in Sources */,
+				6284CD2A266647CC00EC07DA /* InfoAssembly.swift in Sources */,
 				627D6D1A2661236800D75E3A /* UITabBar+Utils.swift in Sources */,
 				624FC0FD26348BF3001377AB /* AppDelegate.swift in Sources */,
 				62324EC7263494210064D0B9 /* ServiceAssembly.swift in Sources */,
 				C98364912649E37F0067D130 /* TaskModel.swift in Sources */,
 				C97407E1265EDD2B00BE63C2 /* CreateTaskViewController.swift in Sources */,
 				C97407EA265EF0C000BE63C2 /* CreateTaskCell.swift in Sources */,
-				62324EE82634996B0064D0B9 /* MainPresenter.swift in Sources */,
+				62324EE82634996B0064D0B9 /* NewsPresenter.swift in Sources */,
 				C93EF111265FD4260002A84F /* TaskInfoPresenter.swift in Sources */,
 				C97407E3265EDD4D00BE63C2 /* CreateTaskPresenter.swift in Sources */,
 				6222B445263855E800ED0250 /* PostTableViewCell.swift in Sources */,
 				62E15AB0263838B6000060CB /* TargetTypeExtension.swift in Sources */,
 				62324EBE263490480064D0B9 /* AppFlow.swift in Sources */,
-				62324ECA263495190064D0B9 /* MainAssembly.swift in Sources */,
-				624FC10726348BF3001377AB /* MyDeadlines.xcdatamodeld in Sources */,
+				62324ECA263495190064D0B9 /* NewsAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		624FC10226348BF3001377AB /* Main.storyboard */ = {
+		624FC10226348BF3001377AB /* News.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				624FC10326348BF3001377AB /* Base */,
 			);
-			name = Main.storyboard;
+			name = News.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -772,19 +800,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		624FC10526348BF3001377AB /* MyDeadlines.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				624FC10626348BF3001377AB /* MyDeadlines.xcdatamodel */,
-			);
-			currentVersion = 624FC10626348BF3001377AB /* MyDeadlines.xcdatamodel */;
-			path = MyDeadlines.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 624FC0F126348BF3001377AB /* Project object */;
 }
