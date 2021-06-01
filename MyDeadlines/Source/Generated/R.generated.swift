@@ -534,7 +534,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "telegram", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'telegram' is used in storyboard 'Info', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'Info', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in storyboard 'Info', but couldn't be loaded.") }
           if UIKit.UIColor(named: "title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'title' is used in storyboard 'Info', but couldn't be loaded.") }
         }
         if _R.storyboard.info().infoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'infoViewController' could not be loaded from storyboard 'Info' as 'InfoViewController'.") }

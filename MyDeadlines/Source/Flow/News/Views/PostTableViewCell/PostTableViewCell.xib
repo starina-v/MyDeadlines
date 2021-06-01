@@ -72,7 +72,7 @@
                 <outlet property="shadowView" destination="fSh-mG-g0j" id="osC-d9-AAK"/>
                 <outlet property="titleLabel" destination="bDy-7B-N7X" id="Aeh-zc-SYk"/>
             </connections>
-            <point key="canvasLocation" x="-164" y="113"/>
+            <point key="canvasLocation" x="172" y="135"/>
         </tableViewCell>
     </objects>
     <resources>
