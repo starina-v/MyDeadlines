@@ -12,12 +12,12 @@ final class TaskInfoViewController: UIViewController {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var shadowView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewAppearance()
-        nameLabel.text = presenter.task.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,9 +64,17 @@ extension TaskInfoViewController: UITableViewDelegate, UITableViewDataSource {
 private extension TaskInfoViewController {
     
     private func setupViewAppearance() {
+        nameLabel.text = presenter.task.name
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(nibWithCellClass: TaskInfoCell.self)
+        
+        shadowView.layer.cornerRadius = 10
+        shadowView.layer.shadowColor = UIColor.gray.cgColor
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowOffset = .init(width: 1, height: 1)
+        shadowView.layer.shadowRadius = 4
     }
 }

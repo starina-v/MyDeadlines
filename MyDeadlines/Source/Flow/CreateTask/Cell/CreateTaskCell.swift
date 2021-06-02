@@ -6,19 +6,13 @@ final class CreateTaskCell: UITableViewCell {
     
     @IBOutlet private weak var taskName: UILabel!
     @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var shadowView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupViewAppearance()
-        datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
     }
-    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        
-//        contentView.frame = contentView.frame.inset(by: .init(top: 10, left: 10, bottom: 0, right: 10))
-//    }
 }
 
 extension CreateTaskCell {
@@ -37,5 +31,13 @@ private extension CreateTaskCell {
     
     func setupViewAppearance() {
         selectedBackgroundView = UIView()
+        
+        datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+        
+        shadowView.layer.cornerRadius = 10
+        shadowView.layer.shadowColor = UIColor.gray.cgColor
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowOffset = .init(width: 1, height: 1)
+        shadowView.layer.shadowRadius = 4
     }
 }

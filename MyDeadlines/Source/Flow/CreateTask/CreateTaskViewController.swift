@@ -15,7 +15,9 @@ final class CreateTaskViewController: UIViewController {
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var labLabel: UILabel!
     @IBOutlet private weak var pracLabel: UILabel!
-    @IBOutlet weak var createView: UIView!
+    @IBOutlet private weak var createView: UIView!
+    @IBOutlet private weak var stepperView: UIView!
+    
     
     private var presenter: CreateTaskPresenter!
     
@@ -90,7 +92,6 @@ private extension CreateTaskViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .clear
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(nibWithCellClass: CreateTaskCell.self)
         
@@ -102,5 +103,16 @@ private extension CreateTaskViewController {
         
         labLabel.text = "Labs quantity: \(presenter.labsCount)"
         pracLabel.text = "Practical quantity: \(presenter.pracCount)"
+        
+        setShadow(for: createView)
+        setShadow(for: stepperView)
+    }
+    
+    func setShadow(for view: UIView) {
+        view.layer.cornerRadius = 10
+        view.layer.shadowColor = UIColor.gray.cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .init(width: 1, height: 1)
+        view.layer.shadowRadius = 4
     }
 }

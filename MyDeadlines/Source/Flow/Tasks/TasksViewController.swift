@@ -95,7 +95,7 @@ private extension TasksViewController {
     func setEmptyView() {
         let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
         emptyLabel.text = "No Data"
-        emptyLabel.tintColor = UIColor(named: "title")
+        emptyLabel.tintColor = .black
         emptyLabel.backgroundColor = .clear
         emptyLabel.textAlignment = NSTextAlignment.center
         self.tableView.backgroundView = emptyLabel

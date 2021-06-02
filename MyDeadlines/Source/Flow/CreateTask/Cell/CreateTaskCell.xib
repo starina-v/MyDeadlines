@@ -47,14 +47,8 @@
                             <constraint firstItem="bdK-z9-wLp" firstAttribute="centerY" secondItem="UKQ-3f-PIg" secondAttribute="centerY" id="kCM-Ts-mD4"/>
                             <constraint firstItem="bdK-z9-wLp" firstAttribute="leading" secondItem="UKQ-3f-PIg" secondAttribute="leading" constant="10" id="xHi-UG-5Ie"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="background"/>
                 <constraints>
                     <constraint firstItem="UKQ-3f-PIg" firstAttribute="centerY" secondItem="C6L-tS-dPB" secondAttribute="centerY" id="5Je-Gs-UlM"/>
                     <constraint firstItem="UKQ-3f-PIg" firstAttribute="top" secondItem="C6L-tS-dPB" secondAttribute="top" constant="10" id="C9W-yZ-nnP"/>
@@ -67,18 +61,16 @@
                     </userDefinedRuntimeAttribute>
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="background"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="datePicker" destination="VSv-qq-L9v" id="gh4-Z7-rN8"/>
+                <outlet property="shadowView" destination="UKQ-3f-PIg" id="mtW-AS-htF"/>
                 <outlet property="taskName" destination="bdK-z9-wLp" id="qU3-8q-Dhv"/>
             </connections>
             <point key="canvasLocation" x="273.1884057971015" y="76.339285714285708"/>
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="background">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="title">
             <color red="0.0" green="0.27300000190734863" blue="0.37099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

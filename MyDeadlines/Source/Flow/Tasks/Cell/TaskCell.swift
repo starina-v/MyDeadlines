@@ -20,6 +20,7 @@ extension TaskCell {
     func update(with task: TaskModel) {
         nameLabel.text = task.name
         tasksCount.text = "total: \(task.lessons.count)"
+        
         getProgres(task: task)
     }
     
@@ -60,5 +61,11 @@ private extension TaskCell {
     
     func setupViewAppearance() {
         selectedBackgroundView = UIView()
+        
+        shadowView.layer.cornerRadius = 10
+        shadowView.layer.shadowColor = UIColor.gray.cgColor
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowOffset = .init(width: 1, height: 1)
+        shadowView.layer.shadowRadius = 4
     }
 }

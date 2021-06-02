@@ -36,7 +36,7 @@
 		62E15AE6263852B1000060CB /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E15AE4263852B1000060CB /* PostTableViewCell.xib */; };
 		C91267902661B3E200928A8D /* TaskInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912678F2661B3E200928A8D /* TaskInfoCell.swift */; };
 		C91267922661B3F000928A8D /* TaskInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91267912661B3F000928A8D /* TaskInfoCell.xib */; };
-		C93EF10A265FC68E0002A84F /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF109265FC68E0002A84F /* TasksCell.swift */; };
+		C93EF10A265FC68E0002A84F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF109265FC68E0002A84F /* TaskCell.swift */; };
 		C93EF10F265FD41B0002A84F /* TaskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF10E265FD41B0002A84F /* TaskInfoViewController.swift */; };
 		C93EF111265FD4260002A84F /* TaskInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF110265FD4260002A84F /* TaskInfoPresenter.swift */; };
 		C93EF113265FD4330002A84F /* TaskInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EF112265FD4330002A84F /* TaskInfoAssembly.swift */; };
@@ -90,7 +90,7 @@
 		818305E6402DA14EEAC1F17B /* Pods-MyDeadlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDeadlines.release.xcconfig"; path = "Target Support Files/Pods-MyDeadlines/Pods-MyDeadlines.release.xcconfig"; sourceTree = "<group>"; };
 		C912678F2661B3E200928A8D /* TaskInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoCell.swift; sourceTree = "<group>"; };
 		C91267912661B3F000928A8D /* TaskInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskInfoCell.xib; sourceTree = "<group>"; };
-		C93EF109265FC68E0002A84F /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
+		C93EF109265FC68E0002A84F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		C93EF10E265FD41B0002A84F /* TaskInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoViewController.swift; sourceTree = "<group>"; };
 		C93EF110265FD4260002A84F /* TaskInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoPresenter.swift; sourceTree = "<group>"; };
 		C93EF112265FD4330002A84F /* TaskInfoAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoAssembly.swift; sourceTree = "<group>"; };
@@ -354,7 +354,7 @@
 		C93EF108265FC67A0002A84F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C93EF109265FC68E0002A84F /* TasksCell.swift */,
+				C93EF109265FC68E0002A84F /* TaskCell.swift */,
 				C9653E2326679300000AE559 /* TaskCell.xib */,
 			);
 			path = Cell;
@@ -399,8 +399,8 @@
 				C93EF108265FC67A0002A84F /* Cell */,
 				C9CB2009264AF57800284FFA /* TasksViewController.swift */,
 				C9CB200B264AF5AC00284FFA /* TasksPresenter.swift */,
-				C9CB200F264AF64900284FFA /* Tasks.storyboard */,
 				C9CB200D264AF5FF00284FFA /* TasksAssembly.swift */,
+				C9CB200F264AF64900284FFA /* Tasks.storyboard */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -575,7 +575,7 @@
 				C9CB200A264AF57800284FFA /* TasksViewController.swift in Sources */,
 				C9CB2007264AF52A00284FFA /* LessonModel.swift in Sources */,
 				6284CD252666461400EC07DA /* InfoViewController.swift in Sources */,
-				C93EF10A265FC68E0002A84F /* TasksCell.swift in Sources */,
+				C93EF10A265FC68E0002A84F /* TaskCell.swift in Sources */,
 				624FC10126348BF3001377AB /* NewsViewController.swift in Sources */,
 				C91267902661B3E200928A8D /* TaskInfoCell.swift in Sources */,
 				62324EC22634940C0064D0B9 /* FlowAssembly.swift in Sources */,

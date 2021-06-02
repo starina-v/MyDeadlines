@@ -2,9 +2,10 @@ import UIKit
 
 final class TaskInfoCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var checkBox: UIButton!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var checkBox: UIButton!
+    @IBOutlet private weak var shadowView: UIView!
     
     private var flag = false
     
@@ -54,5 +55,11 @@ private extension TaskInfoCell {
     
     func setupViewAppearance() {
         selectedBackgroundView = UIView()
+        
+        shadowView.layer.cornerRadius = 10
+        shadowView.layer.shadowColor = UIColor.gray.cgColor
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowOffset = .init(width: 1, height: 1)
+        shadowView.layer.shadowRadius = 4
     }
 }
