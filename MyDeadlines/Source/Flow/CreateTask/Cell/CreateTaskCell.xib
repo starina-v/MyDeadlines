@@ -4,46 +4,62 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="NUe-Fc-EC3" customClass="CreateTaskCell" customModule="MyDeadlines" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="408" height="60"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="NUe-Fc-EC3" customClass="CreateTaskCell" customModule="MyDeadlines" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NUe-Fc-EC3" id="C6L-tS-dPB">
-                <rect key="frame" x="0.0" y="0.0" width="408" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="487" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-z9-wLp">
-                        <rect key="frame" x="10" y="0.0" width="44.5" height="60"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKQ-3f-PIg">
+                        <rect key="frame" x="10" y="10" width="467" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-z9-wLp">
+                                <rect key="frame" x="10" y="10" width="44.5" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="title"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VSv-qq-L9v">
+                                <rect key="frame" x="137" y="10" width="320" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="title"/>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="Qcf-oz-8Qm"/>
+                            <constraint firstItem="VSv-qq-L9v" firstAttribute="centerY" secondItem="UKQ-3f-PIg" secondAttribute="centerY" id="4vu-iI-E3K"/>
+                            <constraint firstAttribute="trailing" secondItem="VSv-qq-L9v" secondAttribute="trailing" constant="10" id="6lM-XI-tUj"/>
+                            <constraint firstItem="VSv-qq-L9v" firstAttribute="top" secondItem="UKQ-3f-PIg" secondAttribute="top" constant="10" id="T6U-PR-Qdh"/>
+                            <constraint firstItem="bdK-z9-wLp" firstAttribute="top" secondItem="UKQ-3f-PIg" secondAttribute="top" constant="10" id="ggG-qZ-GEr"/>
+                            <constraint firstItem="bdK-z9-wLp" firstAttribute="centerY" secondItem="UKQ-3f-PIg" secondAttribute="centerY" id="kCM-Ts-mD4"/>
+                            <constraint firstItem="bdK-z9-wLp" firstAttribute="leading" secondItem="UKQ-3f-PIg" secondAttribute="leading" constant="10" id="xHi-UG-5Ie"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" name="title"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VSv-qq-L9v">
-                        <rect key="frame" x="78" y="0.0" width="320" height="60"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" name="title"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="ZAN-dg-11l"/>
-                        </constraints>
-                    </datePicker>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="background"/>
                 <constraints>
-                    <constraint firstItem="VSv-qq-L9v" firstAttribute="top" secondItem="C6L-tS-dPB" secondAttribute="top" id="3R0-qU-u0E"/>
-                    <constraint firstAttribute="bottom" secondItem="VSv-qq-L9v" secondAttribute="bottom" id="8sD-2f-bpC"/>
-                    <constraint firstItem="bdK-z9-wLp" firstAttribute="centerY" secondItem="C6L-tS-dPB" secondAttribute="centerY" id="Fkc-5y-cAT"/>
-                    <constraint firstItem="bdK-z9-wLp" firstAttribute="top" secondItem="C6L-tS-dPB" secondAttribute="top" id="PFR-QF-FO6"/>
-                    <constraint firstAttribute="trailing" secondItem="VSv-qq-L9v" secondAttribute="trailing" constant="10" id="bjR-74-WFS"/>
-                    <constraint firstItem="bdK-z9-wLp" firstAttribute="leading" secondItem="C6L-tS-dPB" secondAttribute="leading" constant="10" id="fCR-aX-WSW"/>
-                    <constraint firstAttribute="bottom" secondItem="bdK-z9-wLp" secondAttribute="bottom" id="id7-Cw-esF"/>
-                    <constraint firstItem="VSv-qq-L9v" firstAttribute="centerY" secondItem="C6L-tS-dPB" secondAttribute="centerY" id="xQi-U0-uUr"/>
+                    <constraint firstItem="UKQ-3f-PIg" firstAttribute="centerY" secondItem="C6L-tS-dPB" secondAttribute="centerY" id="5Je-Gs-UlM"/>
+                    <constraint firstItem="UKQ-3f-PIg" firstAttribute="top" secondItem="C6L-tS-dPB" secondAttribute="top" constant="10" id="C9W-yZ-nnP"/>
+                    <constraint firstItem="UKQ-3f-PIg" firstAttribute="centerX" secondItem="C6L-tS-dPB" secondAttribute="centerX" id="QIR-tb-dkM"/>
+                    <constraint firstItem="UKQ-3f-PIg" firstAttribute="leading" secondItem="C6L-tS-dPB" secondAttribute="leading" constant="10" id="TxN-6H-DZM"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -51,20 +67,23 @@
                     </userDefinedRuntimeAttribute>
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="primary"/>
+            <color key="backgroundColor" name="background"/>
             <connections>
                 <outlet property="datePicker" destination="VSv-qq-L9v" id="gh4-Z7-rN8"/>
                 <outlet property="taskName" destination="bdK-z9-wLp" id="qU3-8q-Dhv"/>
             </connections>
-            <point key="canvasLocation" x="216" y="64"/>
+            <point key="canvasLocation" x="273.1884057971015" y="76.339285714285708"/>
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="primary">
-            <color red="0.18700000643730164" green="0.39100000262260437" blue="0.79900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="background">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="title">
             <color red="0.0" green="0.27300000190734863" blue="0.37099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

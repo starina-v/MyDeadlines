@@ -335,10 +335,10 @@ struct R: Rswift.Validatable {
     static let createTaskCell = _R.nib._CreateTaskCell()
     /// Nib `PostTableViewCell`.
     static let postTableViewCell = _R.nib._PostTableViewCell()
+    /// Nib `TaskCell`.
+    static let taskCell = _R.nib._TaskCell()
     /// Nib `TaskInfoCell`.
     static let taskInfoCell = _R.nib._TaskInfoCell()
-    /// Nib `TasksCell`.
-    static let tasksCell = _R.nib._TasksCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CreateTaskCell", in: bundle)`
@@ -357,18 +357,18 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "TaskInfoCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.taskInfoCell) instead")
-    static func taskInfoCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.taskInfoCell)
+    /// `UINib(name: "TaskCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.taskCell) instead")
+    static func taskCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.taskCell)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "TasksCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.tasksCell) instead")
-    static func tasksCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.tasksCell)
+    /// `UINib(name: "TaskInfoCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.taskInfoCell) instead")
+    static func taskInfoCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.taskInfoCell)
     }
     #endif
 
@@ -380,12 +380,12 @@ struct R: Rswift.Validatable {
       return R.nib.postTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PostTableViewCell
     }
 
-    static func taskInfoCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskInfoCell? {
-      return R.nib.taskInfoCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskInfoCell
+    static func taskCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskCell? {
+      return R.nib.taskCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskCell
     }
 
-    static func tasksCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TasksCell? {
-      return R.nib.tasksCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TasksCell
+    static func taskInfoCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskInfoCell? {
+      return R.nib.taskInfoCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskInfoCell
     }
 
     fileprivate init() {}
@@ -442,6 +442,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _TaskCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TaskCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _TaskInfoCell: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "TaskInfoCell"
@@ -453,19 +464,9 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "t", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 't' is used in nib 'TaskInfoCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'TaskInfoCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'title' is used in storyboard 'TaskInfoCell', but couldn't be loaded.") }
         }
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _TasksCell: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "TasksCell"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TasksCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TasksCell
       }
 
       fileprivate init() {}
@@ -507,7 +508,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in storyboard 'CreateTask', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'CreateTask', but couldn't be loaded.") }
           if UIKit.UIColor(named: "title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'title' is used in storyboard 'CreateTask', but couldn't be loaded.") }
         }
       }
@@ -585,7 +586,8 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in storyboard 'TaskInfo', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'TaskInfo', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'title' is used in storyboard 'TaskInfo', but couldn't be loaded.") }
         }
       }
 

@@ -15,6 +15,7 @@ final class CreateTaskViewController: UIViewController {
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var labLabel: UILabel!
     @IBOutlet private weak var pracLabel: UILabel!
+    @IBOutlet weak var createView: UIView!
     
     private var presenter: CreateTaskPresenter!
     
@@ -89,6 +90,7 @@ private extension CreateTaskViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(nibWithCellClass: CreateTaskCell.self)
         

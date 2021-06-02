@@ -1,10 +1,11 @@
 import UIKit
 
-final class TasksCell: UITableViewCell {
+final class TaskCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var tasksCount: UILabel!
     @IBOutlet private weak var progressView: UIProgressView!
+    @IBOutlet private weak var percentLabel: UILabel!
     @IBOutlet private weak var shadowView: UIView!
     
     override func awakeFromNib() {
@@ -14,13 +15,12 @@ final class TasksCell: UITableViewCell {
     }
 }
 
-extension TasksCell {
+extension TaskCell {
     
     func update(with task: TaskModel) {
         nameLabel.text = task.name
-        tasksCount.text = "total:  \(task.lessons.count)"
+        tasksCount.text = "total: \(task.lessons.count)"
         getProgres(task: task)
-        setupViewAppearance()
     }
     
     func getProgres(task: TaskModel) {
@@ -39,6 +39,7 @@ extension TasksCell {
             formula = (Float((100/total) * finished) / 100)
         }
         progressView.progress = formula
+        percentLabel.text = "\(Int(formula * 100))%"
         setColor(progress: formula)
     }
     
@@ -55,15 +56,9 @@ extension TasksCell {
     }
 }
 
-private extension TasksCell {
+private extension TaskCell {
     
     func setupViewAppearance() {
         selectedBackgroundView = UIView()
-        
-        shadowView.layer.cornerRadius = 10
-        shadowView.layer.shadowColor = UIColor.gray.cgColor
-        shadowView.layer.shadowOpacity = 1
-        shadowView.layer.shadowOffset = .init(width: 1, height: 1)
-        shadowView.layer.shadowRadius = 4
     }
 }

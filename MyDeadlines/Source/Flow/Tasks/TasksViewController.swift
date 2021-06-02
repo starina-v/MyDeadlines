@@ -48,8 +48,11 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: TasksCell.self)
+        let cell = tableView.dequeueReusableCell(withClass: TaskCell.self)
         cell.update(with: presenter.tasks[indexPath.row])
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowOpacity = 0.6
         return cell
     }
     
@@ -82,7 +85,7 @@ private extension TasksViewController {
         tableView.dataSource = self
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.backgroundColor = .clear
-        tableView.register(nibWithCellClass: TasksCell.self)
+        tableView.register(nibWithCellClass: TaskCell.self)
     }
     
     @objc func createNewTask(_ sender: UIBarButtonItem) {
@@ -92,7 +95,8 @@ private extension TasksViewController {
     func setEmptyView() {
         let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
         emptyLabel.text = "No Data"
-        emptyLabel.backgroundColor = .white
+        emptyLabel.tintColor = UIColor(named: "title")
+        emptyLabel.backgroundColor = .clear
         emptyLabel.textAlignment = NSTextAlignment.center
         self.tableView.backgroundView = emptyLabel
     }
