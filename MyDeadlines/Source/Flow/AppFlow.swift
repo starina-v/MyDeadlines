@@ -1,12 +1,17 @@
 import UIKit
 import Swinject
 import SwinjectAutoregistration
+import SafariServices
 
 enum Route {
-    case main
+    case createTask
+    case taskInfo(TaskModel, Int)
+    case tasks
+    case safari(String)
+    case info
 }
 
-protocol Flow {
+protocol Flow: AnyObject {
     
     var root: UIViewController { get }
     
@@ -17,12 +22,14 @@ final class AppFlow {
 
     private let resolver: Resolver
     private let rootViewController = UITabBarController()
-    private let tasksRoorViewController = UINavigationController()
+    private let tasksRootViewController = UINavigationController()
     private let newsRootViewController = UINavigationController()
 
     init(resolver: Resolver) {
         self.resolver = resolver
-
+    }
+    
+    func setup() {
         setupRootViewController()
         setupGlobalAppearance()
     }
@@ -37,23 +44,72 @@ extension AppFlow: Flow {
 
     func navigate(to step: Route) {
         switch step {
-        case .main:
-            navigationToMain()
+        case .createTask:
+            navigationToCreateTask()
+        case .taskInfo(let task, let index):
+            navigationToTaskInfo(task: task, index: index)
+        case .tasks:
+            navigationToTasks()
+        case .safari(let link):
+            navigationToSafari(with: link)
+        case .info:
+            navigationToInfo()
         }
     }
 }
 
 // MARK: - Navigate
 private extension AppFlow {
+    
+    func navigationToCreateTask() {
+        let createTaskViewController = resolver ~> CreateTaskViewController.self
+        tasksRootViewController.pushViewController(createTaskViewController)
+    }
+    
+    func navigationToTaskInfo(task: TaskModel, index: Int) {
+        guard let taskInfoViewController = resolver.resolve(TaskInfoViewController.self, arguments: task, index) else { return }
+        tasksRootViewController.pushViewController(taskInfoViewController)
+    }
+    
+    func navigationToTasks() {
+        tasksRootViewController.popViewController()
+    }
+    
+    func navigationToInfo() {
+        let infoViewController = resolver ~> InfoViewController.self
+        newsRootViewController.pushViewController(infoViewController)
+    }
 
-    func navigationToMain() {
+    func navigationToSafari(with link: String) {
+        if let url = URL(string: link) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = false
+
+            let safari = SFSafariViewController(url: url, configuration: config)
+            safari.preferredBarTintColor = R.color.primary()
+            safari.preferredControlTintColor = .white
+
+            rootViewController.present(safari, animated: true)
+        }
     }
 }
 
 // MARK: - Appearance
 private extension AppFlow {
 
-    func setupGlobalAppearance() {
+    func setupGlobalAppearance() {        
+        rootViewController.tabBar.isTranslucent = false
+        rootViewController.tabBar.updateColors(
+            with: .init(
+                background: R.color.primary(),
+                selectedBackground: nil,
+                item: .lightGray,
+                selectedItem: .white))
+        
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = R.color.primary()
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
     }
 }
 
@@ -61,25 +117,25 @@ private extension AppFlow {
 private extension AppFlow {
 
     func setupRootViewController() {
-        let tasksViewController = UIViewController()
-        let newsViewController = resolver ~> MainViewController.self
+        let tasksViewController = resolver ~> TasksViewController.self
+        let newsViewController = resolver ~> NewsViewController.self
 
-        tasksRoorViewController.setViewControllers([tasksViewController], animated: false)
+        tasksRootViewController.setViewControllers([tasksViewController], animated: false)
         newsRootViewController.setViewControllers([newsViewController], animated: false)
         
         let tasksTabBarItem = UITabBarItem(
             title: "Tasks",
-            image: .add,
+            image: R.image.list(),
             selectedImage: nil)
 
         let newsTabBarItem = UITabBarItem(
             title: "News",
-            image: .strokedCheckmark,
+            image: R.image.news(),
             selectedImage: nil)
         
         tasksViewController.tabBarItem = tasksTabBarItem
         newsViewController.tabBarItem = newsTabBarItem
 
-        rootViewController.setViewControllers([tasksRoorViewController, newsRootViewController], animated: false)
+        rootViewController.setViewControllers([tasksRootViewController, newsRootViewController], animated: false)
     }
 }

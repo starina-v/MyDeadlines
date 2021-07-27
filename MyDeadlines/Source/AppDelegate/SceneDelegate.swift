@@ -24,7 +24,11 @@ private extension SceneDelegate {
         
         let modulesAssembler = Assembler(
             [
-                MainAssembly()
+                NewsAssembly(),
+                InfoAssembly(),
+                TasksAssembly(),
+                CreateTaskAssembly(),
+                TaskInfoAssembly()
             ],
             parent: serviceAssembler)
         
@@ -35,6 +39,7 @@ private extension SceneDelegate {
     
     func configureFlow() {
         let appFlow = assembler.resolver ~> AppFlow.self
+        appFlow.setup()
         
         self.window?.rootViewController = appFlow.root
         self.window?.makeKeyAndVisible()
